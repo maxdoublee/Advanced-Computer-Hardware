@@ -93,6 +93,7 @@ always_comb begin
 							//arbiter = cache_read_data?
 						end
 						else if (cache_write_request) begin
+							//Inclusion hit 
 							if(write_to_L1_request && first_write_to_L1_request) begin //receives request from L1 cache for inclusion policy 
 								L1_data[index][word_start_bit +: DATA_WIDTH] = cache_write_data; //Write new data to the specific place in block
 								L1_dirty_bits[index] = 1'b1; //Mark index as dirty	
@@ -129,6 +130,7 @@ always_comb begin
 				cache_L2_memory_address = cache_L1_memory_address;
 				read_from_L2_request <= 1'b1; //Initiate a read request 
 				if(L2_ready) begin //Still for the inclusion policy, L1 gets the same data that L2 grabs L3 by way of this flag outputted from L2
+					//Inclusion miss 
 					L1_tags[index] = tag; //Get tag from requested address and assign it to block 
 					L1_valid_bits[index] = 1'b1; //When the line is first brought into cache set it as valid 
 					L1_data[index] = L2_data[tag]; //Assign new memory data to the L1 cache block
