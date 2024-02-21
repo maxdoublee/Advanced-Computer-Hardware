@@ -2,12 +2,12 @@
 //Max Destil
 //RIN: 662032859
 
-//cache FSM, L2a
+//cache FSM, L2b
 
 import cache_config::*;
 import main_memory_config::*;
 
-module cache_fsm_L2a #(
+module cache_fsm_L2b #(
   parameter CACHE_LEVEL = 2
 )(
 	input logic clk,
@@ -35,7 +35,7 @@ module cache_fsm_L2a #(
 	output logic arbiter_read_update_from_L2_cache_modules,
    output logic arbiter_write_update_from_L2_cache_modules,
 	output logic [ADDRESS_WIDTH-1:0] block_to_determine_mesi_state_from_arbiter,
-	output logic [MAIN_MEMORY_DATA_WIDTH-1:0] L2a_local_data,
+	output logic [MAIN_MEMORY_DATA_WIDTH-1:0] L2b_local_data,
 	output logic acknowledge_arbiter_verify,
 	output logic L2_cache_hit,
 	output logic L2_cache_read_hit,
@@ -169,7 +169,7 @@ module cache_fsm_L2a #(
 		lru_way = 1'b0;
 		update_lru_flag = 1'b0;
 		write_data_to_L1_from_L2 = 1'b0;
-		L2a_local_data = 1'b0;
+		L2b_local_data = 1'b0;
 		//Extract the top two bits as the processor ID
 		processor_id = cache_L2_memory_address[31:30]; 
 		//Bit-slicing to extract the appropriate number of bits for each segment of the cache address
@@ -179,7 +179,7 @@ module cache_fsm_L2a #(
 		//Basic Cache States 
 		case (current_state)
 			IDLE: begin
-				if((processor_id == 0) && (write_back_to_L2_request || read_from_L2_request || write_to_L2_request)) begin
+				if((processor_id == 1) && (write_back_to_L2_request || read_from_L2_request || write_to_L2_request)) begin
 					L2_cache_ready = 1'b0;
 					L2_cache_hit = 1'b0;
 					update_lru_flag = 1'b0;
@@ -219,7 +219,7 @@ module cache_fsm_L2a #(
 						L2_data[index][lru_way] = write_back_to_L2_data;
 						// Reporting to arbiter needs to occur in write back due to the nature of how lru works and the address that hits may not be the address that gets its data changed 
 						block_to_determine_mesi_state_from_arbiter = array_of_cache_L2_memory_addresses[index][lru_way]; 
-						L2a_local_data = L2_data[index][lru_way]; //provide data to bus from least recently used block
+						L2b_local_data = L2_data[index][lru_way]; //provide data to bus from least recently used block
 						arbiter_write_update_from_L2_cache_modules = 1'b1; //update bus
 						if(arbiter_verify) begin
 							acknowledge_arbiter_verify = 1'b1;
@@ -235,7 +235,7 @@ module cache_fsm_L2a #(
 						//Read hit 
 						L2_cache_read_hit = 1'b1;
 						block_to_determine_mesi_state_from_arbiter = cache_L2_memory_address;
-						L2a_local_data = L2_data[index][tag];
+						L2b_local_data = L2_data[index][tag];
 						arbiter_read_update_from_L2_cache_modules = 1'b1; //sends out a read request to arbiter to determine state of block 
 						if(arbiter_verify) begin
 							acknowledge_arbiter_verify = 1'b1;
@@ -268,7 +268,7 @@ module cache_fsm_L2a #(
 						L2_data[index][tag][word_start_bit +: DATA_WIDTH] = cache_write_data; //Write new data to the specific place in block
 						L2_dirty_bits[index][tag] = 1'b1; //Mark tag i.e. block within four way associative set as dirty
 						block_to_determine_mesi_state_from_arbiter = cache_L2_memory_address; 
-						L2a_local_data = L2_data[index][tag]; 
+						L2b_local_data = L2_data[index][tag]; 
 						arbiter_write_update_from_L2_cache_modules = 1'b1; 
 						if(arbiter_verify) begin
 							acknowledge_arbiter_verify = 1'b1;

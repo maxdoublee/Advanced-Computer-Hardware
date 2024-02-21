@@ -4,6 +4,8 @@
 
 //main memory package setup
 
+import main_memory_config::*;
+
 package main_memory_config;
 
     //Main memory configuration parameters
