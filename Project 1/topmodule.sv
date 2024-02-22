@@ -18,7 +18,8 @@ module topmodule (
 );
 
     // Internal signals for L1 to L2 communication
-    logic write_to_L2_request, read_from_L2_request, write_back_to_L2_request;
+    logic write_to_L2a_request, write_to_L2b_request, write_to_L2c_request, write_to_L2d_request;
+    logic write_back_to_L2a_request, write_back_to_L2b_request, write_back_to_L2c_request ,write_back_to_L2d_request;
     logic write_to_L2_verified, write_back_to_L2_verified;
     logic [MAIN_MEMORY_DATA_WIDTH-1:0] write_data_to_L1_from_L2; 
     logic [MAIN_MEMORY_DATA_WIDTH-1:0] write_back_to_L2_data;
@@ -60,15 +61,15 @@ module topmodule (
         .write_to_L2_verified(write_to_L2_verified),
         .write_data_to_L1_from_L2(write_data_to_L1_from_L2),
         .write_back_to_L2_verified(write_back_to_L2_verified),
-        .cache_L1_read_data(cache_L1_read_data),
-        .L1_cache_hit(L1_cache_hit),
-        .L1_cache_miss(L1_cache_miss),
-        .L1_cache_ready(L1_cache_ready),
+        .cache_L1a_read_data(cache_L1a_read_data),
+        .L1a_cache_hit(L1a_cache_hit),
+        .L1a_cache_miss(L1_cache_miss),
+        .L1a_cache_ready(L1_cache_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2a_request(write_to_L2a_request),
+        .write_back_to_L2a_request(write_back_to_L2a_request),
         .write_back_to_L2_data(write_back_to_L2_data)
-    ); 
+    );
     cache_fsm_L1b #(
         .CACHE_LEVEL(1)
     ) top_cache_fsm_L1b (
@@ -79,13 +80,13 @@ module topmodule (
         .write_to_L2_verified(write_to_L2_verified),
         .write_data_to_L1_from_L2(write_data_to_L1_from_L2),
         .write_back_to_L2_verified(write_back_to_L2_verified),
-        .cache_L1_read_data(cache_L1_read_data),
-        .L1_cache_hit(L1_cache_hit),
-        .L1_cache_miss(L1_cache_miss),
-        .L1_cache_ready(L1_cache_ready),
+        .cache_L1b_read_data(cache_L1b_read_data),
+        .L1b_cache_hit(L1b_cache_hit),
+        .L1b_cache_miss(L1_cache_miss),
+        .L1b_cache_ready(L1_cache_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2b_request(write_to_L2b_request),
+        .write_back_to_L2b_request(write_back_to_L2b_request),
         .write_back_to_L2_data(write_back_to_L2_data)
     );  
     cache_fsm_L1c #(
@@ -98,13 +99,13 @@ module topmodule (
         .write_to_L2_verified(write_to_L2_verified),
         .write_data_to_L1_from_L2(write_data_to_L1_from_L2),
         .write_back_to_L2_verified(write_back_to_L2_verified),
-        .cache_L1_read_data(cache_L1_read_data),
-        .L1_cache_hit(L1_cache_hit),
-        .L1_cache_miss(L1_cache_miss),
-        .L1_cache_ready(L1_cache_ready),
+        .cache_L1c_read_data(cache_L1c_read_data),
+        .L1c_cache_hit(L1c_cache_hit),
+        .L1c_cache_miss(L1_cache_miss),
+        .L1c_cache_ready(L1_cache_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2c_request(write_to_L2c_request),
+        .write_back_to_L2c_request(write_back_to_L2c_request),
         .write_back_to_L2_data(write_back_to_L2_data)
     );  
     cache_fsm_L1d #(
@@ -117,15 +118,15 @@ module topmodule (
         .write_to_L2_verified(write_to_L2_verified),
         .write_data_to_L1_from_L2(write_data_to_L1_from_L2),
         .write_back_to_L2_verified(write_back_to_L2_verified),
-        .cache_L1_read_data(cache_L1_read_data),
-        .L1_cache_hit(L1_cache_hit),
-        .L1_cache_miss(L1_cache_miss),
-        .L1_cache_ready(L1_cache_ready),
+        .cache_L1d_read_data(cache_L1d_read_data),
+        .L1d_cache_hit(L1d_cache_hit),
+        .L1d_cache_miss(L1_cache_miss),
+        .L1d_cache_ready(L1_cache_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2d_request(write_to_L2d_request),
+        .write_back_to_L2d_request(write_back_to_L2d_request),
         .write_back_to_L2_data(write_back_to_L2_data)
-    );    
+    );  
 
     // Instantiate L2 caches
     cache_fsm_L2a #(
@@ -135,9 +136,9 @@ module topmodule (
         .reset(reset),
         .L3_ready(L3_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .read_from_L2_request(read_from_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2a_request(write_to_L2a_request),
+        .read_from_L2a_request(read_from_L2a_request),
+        .write_back_to_L2a_request(write_back_to_L2a_request),
         .write_back_to_L2_data(write_back_to_L2_data),
         .write_data_to_L2_from_L3(write_data_to_L2_from_L3),
         .write_back_to_L3_verified(write_back_to_L3_verified),
@@ -171,9 +172,9 @@ module topmodule (
         .reset(reset),
         .L3_ready(L3_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .read_from_L2_request(read_from_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2b_request(write_to_L2b_request),
+        .read_from_L2b_request(read_from_L2b_request),
+        .write_back_to_L2b_request(write_back_to_L2b_request),
         .write_back_to_L2_data(write_back_to_L2_data),
         .write_data_to_L2_from_L3(write_data_to_L2_from_L3),
         .write_back_to_L3_verified(write_back_to_L3_verified),
@@ -207,9 +208,9 @@ module topmodule (
         .reset(reset),
         .L3_ready(L3_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .read_from_L2_request(read_from_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2c_request(write_to_L2c_request),
+        .read_from_L2c_request(read_from_L2c_request),
+        .write_back_to_L2c_request(write_back_to_L2c_request),
         .write_back_to_L2_data(write_back_to_L2_data),
         .write_data_to_L2_from_L3(write_data_to_L2_from_L3),
         .write_back_to_L3_verified(write_back_to_L3_verified),
@@ -243,9 +244,9 @@ module topmodule (
         .reset(reset),
         .L3_ready(L3_ready),
         .cache_L2_memory_address(cache_L2_memory_address),
-        .write_to_L2_request(write_to_L2_request),
-        .read_from_L2_request(read_from_L2_request),
-        .write_back_to_L2_request(write_back_to_L2_request),
+        .write_to_L2d_request(write_to_L2d_request),
+        .read_from_L2d_request(read_from_L2d_request),
+        .write_back_to_L2d_request(write_back_to_L2d_request),
         .write_back_to_L2_data(write_back_to_L2_data),
         .write_data_to_L2_from_L3(write_data_to_L2_from_L3),
         .write_back_to_L3_verified(write_back_to_L3_verified),
@@ -324,6 +325,6 @@ module topmodule (
         .arbiter_write_update_from_L2_cache_modules(arbiter_write_update_from_L2_cache_modules),
         .acknowledge_arbiter_verify(acknowledge_arbiter_verify),
         .mesi_state_to_cache(mesi_state_to_cache),
-        .arbiter_verify(arbiter_verify),
+        .arbiter_verify(arbiter_verify)
     );
 endmodule

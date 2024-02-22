@@ -4,8 +4,6 @@
 
 //cache package setup 
 
-import main_memory_config::*;
-
 package cache_config;
 	
   //Cache configuration parameters
