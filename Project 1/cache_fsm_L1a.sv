@@ -30,7 +30,9 @@ module cache_fsm_L1a #(
   output logic [DATA_WIDTH-1:0] cache_1a_write_data_to_L2a,
   output logic L1a_cache_hit,
   output logic L1a_cache_miss,
-  output logic L1a_cache_ready
+  output logic L1a_cache_ready,
+  output logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L1a_written_by_testbench,
+  output logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L1a_from_main_memory
 );
 
 	//Define cache states
@@ -66,8 +68,10 @@ module cache_fsm_L1a #(
    logic clean_flag;
    logic cache_hit_flag;
    logic cache_L2a_memory_address_flag;
-   logic setup_flag;
    logic word_start_flag;
+   logic check_L1a_allocate_once_to_set_ff_flag;
+   logic check_L1a_allocate_once_to_reset_ff_flag;
+   logic check_L1a_allocate_once_to_comb_flag;
 
     always_ff @(posedge clk or posedge reset) begin
 		if (reset) begin
@@ -78,11 +82,8 @@ module cache_fsm_L1a #(
             clean_flag = 1'b0;
             cache_hit_flag = 1'b0;
             write_back_to_L2a_data = 1'b0;
-            processor_id = 1'b0;
-            tag = 1'b0;
-            index = 1'b0;
-            offset = 1'b0;
             word_start_bit = 1'b0;
+			check_L1a_allocate_once_to_comb_flag = 1'b0;
 			current_state <= IDLE;
             for (int set = 0; set < NUM_SETS; set++) begin
                 array_of_cache_L1a_memory_addresses[set] <= 0; // Initialize addresses to 0
@@ -93,14 +94,6 @@ module cache_fsm_L1a #(
         	end
 		end else begin
 			current_state <= next_state;
-            if(setup_flag) begin 
-                //Extract the top two bits as the processor ID
-                processor_id = cache_L1a_memory_address[31:30]; 
-                //Bit-slicing to extract the appropriate number of bits for each segment of the cache address
-                tag = cache_L1a_memory_address[ADDRESS_WIDTH-3 -: TAG_WIDTH]; //minus three for processor id implementation (also zero is included)
-                index = cache_L1a_memory_address[INDEX_START -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
-                offset = cache_L1a_memory_address[OFFSET_START -: BLOCK_OFFSET_WIDTH]; //Get offset from requested address
-            end
             if(check_if_cache_hit_flag) begin 
                 // Cache hit
 				if(L1_tags[index] == tag && L1_valid_bits[index] == 1) begin //checks if line is marked valid and tags match in L1 cache
@@ -125,6 +118,12 @@ module cache_fsm_L1a #(
                 L1_data[index][word_start_bit +: DATA_WIDTH] = cache_1a_write_data; //Write new data to the specific place in block
                 L1_dirty_bits[index] = 1'b1; //Mark index as dirty	
             end
+            if(check_L1a_allocate_once_to_set_ff_flag) begin 
+				check_L1a_allocate_once_to_comb_flag = 1'b1;
+			end 
+			if(check_L1a_allocate_once_to_reset_ff_flag) begin 
+				check_L1a_allocate_once_to_comb_flag = 1'b0;
+			end 
             if(cache_L2a_memory_address_flag) begin
                 cache_L2a_memory_address = cache_L1a_memory_address;
             end
@@ -132,6 +131,7 @@ module cache_fsm_L1a #(
                 L1_tags[index] = tag; //Get tag from requested address and assign it to block 
                 L1_valid_bits[index] = 1'b1; //When the line is first brought into cache set it as valid 
                 L1_data[index] = write_data_to_L1a_from_L2a; //Assign new memory data to the L1 cache block
+                data_stored_at_cache_L1a_from_main_memory = L1_data[index];
             end
             if(write_back_1_flag) begin 
                 //Keep track of old cache addresses
@@ -145,32 +145,40 @@ module cache_fsm_L1a #(
 	end
 
 	always_comb begin
-        write_to_L2a_request = 1'b0;
         write_back_to_L2a_request = 1'b0;
-        read_from_L2a_request = 1'b0;
         L1a_cache_hit = 1'b0;
         L1a_cache_ready = 1'b0;
         L1a_cache_miss = 1'b0;
         check_if_cache_hit_flag = 1'b0;
         cache_read_data_flag = 1'b0;
         cache_write_inclusion_policy_flag = 1'b0;
-        allocate_flag = 1'b0;
         write_back_1_flag = 1'b0;
         write_back_2_flag = 1'b0;
         cache_L2a_memory_address_flag = 1'b0;
-        setup_flag = 1'b0;
         word_start_flag = 1'b0;
         cache_1a_write_data_to_L2a = 1'b0;
+        check_L1a_allocate_once_to_set_ff_flag = 1'b0;
+		check_L1a_allocate_once_to_reset_ff_flag = 1'b0;
 		next_state = state_t'(1'b0);
-        first_write_to_L1_request = 1'b1;
-		setup_flag = 1'b1;
+        allocate_flag = 1'b0;
+		//Extract the top two bits as the processor ID
+        processor_id = cache_L1a_memory_address[ADDRESS_WIDTH-1 -: PROCESSOR_ID_WIDTH]; 
+        //Bit-slicing to extract the appropriate number of bits for each segment of the cache address
+        tag = cache_L1a_memory_address[(ADDRESS_WIDTH-PROCESSOR_ID_WIDTH)-1 -: TAG_WIDTH]; 
+        index = cache_L1a_memory_address[INDEX_START-1 -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
+        offset = cache_L1a_memory_address[OFFSET_START-1 -: BLOCK_OFFSET_WIDTH]; //Get offset from requested address
 		//Basic Cache States 
 		case (current_state)
 			IDLE: begin
 				if((processor_id == 0) && (cache_a_read_request || cache_a_write_request)) begin
-					next_state = COMPARE;
+                    read_from_L2a_request = 1'b0;
+                    first_write_to_L1_request = 1'b1;
+                    write_to_L2a_request = 1'b0;
+                    next_state = COMPARE;
 				end
 				else begin
+                    read_from_L2a_request = 1'b0;
+                    write_to_L2a_request = 1'b0;
 					next_state = IDLE;
 				end			  
 			end
@@ -189,6 +197,7 @@ module cache_fsm_L1a #(
 						//Inclusion policy
                         cache_write_inclusion_policy_flag = 1'b1;
                         cache_1a_write_data_to_L2a = cache_1a_write_data;
+                        data_stored_at_cache_L1a_written_by_testbench = cache_1a_write_data_to_L2a;
                         cache_L2a_memory_address_flag = 1'b1;
 						write_to_L2a_request = 1'b1; //sends request to L2 for cache inclusion policy 
 						first_write_to_L1_request = 1'b0; //prevent writing to the same block location again when waiting for L2 to verify it received the same data to maintain the inclusion policy between L1 and L2
@@ -198,7 +207,11 @@ module cache_fsm_L1a #(
 						L1a_cache_ready = 1'b1;
 						next_state = IDLE;
 					end else begin
-						next_state = COMPARE;
+                        if(cache_a_read_request) begin 
+						    next_state = IDLE;
+                        end else begin
+						    next_state = COMPARE;
+                        end
 					end
 				end else begin
 					//Cache miss
@@ -214,18 +227,22 @@ module cache_fsm_L1a #(
 			end
 			ALLOCATE: begin 
 				//Instead of continuously replacing blocks in L1, search L2 to see if the requested address is found there 
-                cache_L2a_memory_address_flag = 1'b1;
-				read_from_L2a_request = 1'b1; //Initiate a read request 
-                if(L2a_ready) begin //Still for the inclusion policy, L1 gets the same data that L2 grabs L3 by way of this flag outputted from L2
-					//Inclusion miss 
-                    allocate_flag = 1'b1;
-					//Reset read request flag
-					read_from_L2a_request = 1'b0;
-					next_state = COMPARE;
-				end
-				else begin
+				if(!check_L1a_allocate_once_to_comb_flag) begin
+					check_L1a_allocate_once_to_set_ff_flag = 1'b1;
+                    cache_L2a_memory_address_flag = 1'b1;
+				    read_from_L2a_request = 1'b1; //Initiate a read request 
 					next_state = ALLOCATE;
-				end
+                end else begin
+                    if(L2a_ready) begin //Still for the inclusion policy, L1 gets the same data that L2 grabs L3 by way of this flag outputted from L2
+                        //Inclusion miss 
+                        allocate_flag = 1'b1;
+                        //Reset read request flag
+                        read_from_L2a_request = 1'b0;
+                        next_state = COMPARE;
+                    end else begin
+                        next_state = ALLOCATE;
+                    end
+                end
 			end
 			WRITE_BACK: begin
                 write_back_1_flag = 1'b1;

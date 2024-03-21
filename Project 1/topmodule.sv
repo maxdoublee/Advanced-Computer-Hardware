@@ -50,7 +50,7 @@ module topmodule (
     logic arbiter_confirmed_L3_ready_for_L2a, arbiter_confirmed_L3_ready_for_L2b, arbiter_confirmed_L3_ready_for_L2c, arbiter_confirmed_L3_ready_for_L2d;
     logic write_back_to_L3_from_arbiter_a_verified, write_back_to_L3_from_arbiter_b_verified, write_back_to_L3_from_arbiter_c_verified, write_back_to_L3_from_arbiter_d_verified;
 	logic [MESI_STATE_WIDTH-1:0] mesi_state_to_cache_a, mesi_state_to_cache_b, mesi_state_to_cache_c, mesi_state_to_cache_d;
-    logic arbiter_verify_a, arbiter_verify_b, arbiter_verify_c, arbiter_verify_d;
+    logic arbiter_verify_a, arbiter_verify_b, arbwrite_back_to_L3_request_from_L2d_arbiteriter_verify_c, arbiter_verify_d;
 	logic cache_fsm_L2a_block_to_arbiter_verified, cache_fsm_L2b_block_to_arbiter_verified, cache_fsm_L2c_block_to_arbiter_verified, cache_fsm_L2d_block_to_arbiter_verified;
     logic read_from_L3_request_from_L2a, read_from_L3_request_from_L2b, read_from_L3_request_from_L2c, read_from_L3_request_from_L2d;
     logic write_back_to_L3_request_from_L2a, write_back_to_L3_request_from_L2b, write_back_to_L3_request_from_L2c, write_back_to_L3_request_from_L2d;
@@ -59,12 +59,16 @@ module topmodule (
 	logic [ADDRESS_WIDTH-1:0] block_a_to_determine_mesi_state_from_arbiter, block_b_to_determine_mesi_state_from_arbiter, block_c_to_determine_mesi_state_from_arbiter, block_d_to_determine_mesi_state_from_arbiter;
     logic [MAIN_MEMORY_DATA_WIDTH-1:0] L2a_local_data, L2b_local_data, L2c_local_data, L2d_local_data;
     logic acknowledge_arbiter_verify_a, acknowledge_arbiter_verify_b, acknowledge_arbiter_verify_c, acknowledge_arbiter_verify_d;
-    logic cache_fsm_L2a_block_to_arbiter, cache_fsm_L2b_block_to_arbiter, cache_fsm_L2c_block_to_arbiter, cache_fsm_L2d_block_to_arbiter;
+    logic cache_fsm_L2a_block_to_arbiter, cache_fsm_Lwrite_back_to_L3_from_arbiter_d_verified2b_block_to_arbiter, cache_fsm_L2c_block_to_arbiter, cache_fsm_L2d_block_to_arbiter;
     logic cache_L3a_memory_address_to_array_L3a_to_arbiter_flag, cache_L3b_memory_address_to_array_L3b_to_arbiter_flag, cache_L3c_memory_address_to_array_L3c_to_arbiter_flag, cache_L3d_memory_address_to_array_L3d_to_arbiter_flag;
+    logic [1:0] lru_way_a, lru_way_b, lru_way_c, lru_way_d;
+    logic mesi_state_confirmation_verified_flag;
+    logic [MESI_STATE_WIDTH-1:0] MESI_state_from_arbiter_for_testbench;
 
     // Internal signals for L3 to arbiter communication
     logic read_from_arbiter_request_from_L2a_to_L3, read_from_arbiter_request_from_L2b_to_L3, read_from_arbiter_request_from_L2c_to_L3, read_from_arbiter_request_from_L2d_to_L3;
-    logic write_back_to_L3a_request, write_back_to_L3b_request, write_back_to_L3c_request, write_back_to_L3d_request;
+    logic write_back_to_L3_request_from_L2a_arbiter, write_back_to_L3_request_from_L2b_arbiter, write_back_to_L3_request_from_L2c_arbiter, write_back_to_L3_request_from_L2d_arbiter;
+    logic cache_L3a_memory_address_to_array_L3a_from_arbiter_flag, cache_L3a_memory_address_to_array_L3b_from_arbiter_flag, cache_L3a_memory_address_to_array_L3c_from_arbiter_flag, cache_L3a_memory_address_to_array_L3d_from_arbiter_flag;
     logic L3a_ready, L3b_ready, L3c_ready, L3d_ready;
     logic write_back_to_L3_from_L2a_verified, write_back_to_L3_from_L2b_verified, write_back_to_L3_from_L2c_verified, write_back_to_L3_from_L2d_verified; 
 
@@ -89,8 +93,11 @@ module topmodule (
     logic L3_cache_hit;
     logic L3_cache_miss;
     logic L3_cache_ready;
+    logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L1a_from_main_memory, data_stored_at_cache_L1a_written_by_testbench, data_stored_at_cache_L1b_written_by_testbench, data_stored_at_cache_L1c_written_by_testbench, data_stored_at_cache_L1d_written_by_testbench;
+    logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L2a_from_main_memory, data_stored_at_cache_L2b_from_main_memory, data_stored_at_cache_L2c_from_main_memory, data_stored_at_cache_L2d_from_main_memory;
+    logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L3_from_main_memory;
 
-    // Instantiate L1 caches
+        // Instantiate L1 caches
     cache_fsm_L1a #(
         .CACHE_LEVEL(1)
     ) top_cache_fsm_L1a (
@@ -113,7 +120,9 @@ module topmodule (
         .cache_1a_write_data_to_L2a(cache_1a_write_data_to_L2a),
         .L1a_cache_hit(L1a_cache_hit),
         .L1a_cache_miss(L1a_cache_miss),
-        .L1a_cache_ready(L1a_cache_ready)
+        .L1a_cache_ready(L1a_cache_ready),
+        .data_stored_at_cache_L1a_written_by_testbench(data_stored_at_cache_L1a_written_by_testbench),
+        .data_stored_at_cache_L1a_from_main_memory(data_stored_at_cache_L1a_from_main_memory)
     );
     cache_fsm_L1b #(
         .CACHE_LEVEL(1)
@@ -137,7 +146,8 @@ module topmodule (
         .cache_1b_write_data_to_L2b(cache_1b_write_data_to_L2b),
         .L1b_cache_hit(L1b_cache_hit),
         .L1b_cache_miss(L1b_cache_miss),
-        .L1b_cache_ready(L1b_cache_ready)
+        .L1b_cache_ready(L1b_cache_ready),
+        .data_stored_at_cache_L1b_written_by_testbench(data_stored_at_cache_L1b_written_by_testbench)
     );  
     cache_fsm_L1c #(
     .CACHE_LEVEL(1)
@@ -161,7 +171,8 @@ module topmodule (
         .cache_1c_write_data_to_L2c(cache_1c_write_data_to_L2c),
         .L1c_cache_hit(L1c_cache_hit),
         .L1c_cache_miss(L1c_cache_miss),
-        .L1c_cache_ready(L1c_cache_ready)
+        .L1c_cache_ready(L1c_cache_ready),
+        .data_stored_at_cache_L1c_written_by_testbench(data_stored_at_cache_L1c_written_by_testbench)
     );
     cache_fsm_L1d #(
     .CACHE_LEVEL(1)
@@ -185,7 +196,8 @@ module topmodule (
         .cache_1d_write_data_to_L2d(cache_1d_write_data_to_L2d),
         .L1d_cache_hit(L1d_cache_hit),
         .L1d_cache_miss(L1d_cache_miss),
-        .L1d_cache_ready(L1d_cache_ready)
+        .L1d_cache_ready(L1d_cache_ready),
+        .data_stored_at_cache_L1d_written_by_testbench(data_stored_at_cache_L1d_written_by_testbench)
     );
 
     // Instantiate L2 caches
@@ -206,6 +218,8 @@ module topmodule (
         .mesi_state_to_cache_a(mesi_state_to_cache_a),
         .arbiter_verify_a(arbiter_verify_a),
         .cache_fsm_L2a_block_to_arbiter_verified(cache_fsm_L2a_block_to_arbiter_verified),
+        .mesi_state_confirmation_a(mesi_state_confirmation_a),
+        .MESI_state_from_arbiter_for_testbench(MESI_state_from_arbiter_for_testbench),
         .write_to_L2a_verified(write_to_L2a_verified),
         .read_from_L3_request_from_L2a(read_from_L3_request_from_L2a),
         .write_back_to_L3_request_from_L2a(write_back_to_L3_request_from_L2a),
@@ -225,7 +239,10 @@ module topmodule (
         .L2a_cache_miss(L2a_cache_miss),
         .L2a_cache_ready(L2a_cache_ready),
         .cache_fsm_L2a_block_to_arbiter(cache_fsm_L2a_block_to_arbiter),
-        .cache_L3a_memory_address_to_array_L3a_to_arbiter_flag(cache_L3a_memory_address_to_array_L3a_to_arbiter_flag)
+        .cache_L3a_memory_address_to_array_L3a_to_arbiter_flag(cache_L3a_memory_address_to_array_L3a_to_arbiter_flag),
+        .lru_way_a(lru_way_a),
+        .mesi_state_confirmation_verified_flag_a(mesi_state_confirmation_verified_flag_a),
+        .data_stored_at_cache_L2a_from_main_memory(data_stored_at_cache_L2a_from_main_memory)
     );
     cache_fsm_L2b #(
         .CACHE_LEVEL(2)
@@ -244,6 +261,8 @@ module topmodule (
         .mesi_state_to_cache_b(mesi_state_to_cache_b),
         .arbiter_verify_b(arbiter_verify_b),
         .cache_fsm_L2b_block_to_arbiter_verified(cache_fsm_L2b_block_to_arbiter_verified),
+        .mesi_state_confirmation_b(mesi_state_confirmation_b),
+        .MESI_state_from_arbiter_for_testbench(MESI_state_from_arbiter_for_testbench),
         .write_to_L2b_verified(write_to_L2b_verified),
         .read_from_L3_request_from_L2b(read_from_L3_request_from_L2b),
         .write_back_to_L3_request_from_L2b(write_back_to_L3_request_from_L2b),
@@ -263,7 +282,10 @@ module topmodule (
         .L2b_cache_miss(L2b_cache_miss),
         .L2b_cache_ready(L2b_cache_ready),
         .cache_fsm_L2b_block_to_arbiter(cache_fsm_L2b_block_to_arbiter),
-        .cache_L3b_memory_address_to_array_L3b_to_arbiter_flag(cache_L3b_memory_address_to_array_L3b_to_arbiter_flag)
+        .cache_L3b_memory_address_to_array_L3b_to_arbiter_flag(cache_L3b_memory_address_to_array_L3b_to_arbiter_flag),
+        .lru_way_b(lru_way_b),
+        .mesi_state_confirmation_verified_flag_b(mesi_state_confirmation_verified_flag_b),
+        .data_stored_at_cache_L2b_from_main_memory(data_stored_at_cache_L2b_from_main_memory)
     );
     cache_fsm_L2c #(
         .CACHE_LEVEL(2)
@@ -282,6 +304,8 @@ module topmodule (
         .mesi_state_to_cache_c(mesi_state_to_cache_c),
         .arbiter_verify_c(arbiter_verify_c),
         .cache_fsm_L2c_block_to_arbiter_verified(cache_fsm_L2c_block_to_arbiter_verified),
+        .mesi_state_confirmation_c(mesi_state_confirmation_c),
+        .MESI_state_from_arbiter_for_testbench(MESI_state_from_arbiter_for_testbench),
         .write_to_L2c_verified(write_to_L2c_verified),
         .read_from_L3_request_from_L2c(read_from_L3_request_from_L2c),
         .write_back_to_L3_request_from_L2c(write_back_to_L3_request_from_L2c),
@@ -301,7 +325,10 @@ module topmodule (
         .L2c_cache_miss(L2c_cache_miss),
         .L2c_cache_ready(L2c_cache_ready),
         .cache_fsm_L2c_block_to_arbiter(cache_fsm_L2c_block_to_arbiter),
-        .cache_L3c_memory_address_to_array_L3c_to_arbiter_flag(cache_L3c_memory_address_to_array_L3c_to_arbiter_flag)
+        .cache_L3c_memory_address_to_array_L3c_to_arbiter_flag(cache_L3c_memory_address_to_array_L3c_to_arbiter_flag),
+        .lru_way_c(lru_way_c),
+        .mesi_state_confirmation_verified_flag_c(mesi_state_confirmation_verified_flag_c),
+        .data_stored_at_cache_L2c_from_main_memory(data_stored_at_cache_L2c_from_main_memory)
     );
     cache_fsm_L2d #(
         .CACHE_LEVEL(2)
@@ -320,6 +347,7 @@ module topmodule (
         .mesi_state_to_cache_d(mesi_state_to_cache_d),
         .arbiter_verify_d(arbiter_verify_d),
         .cache_fsm_L2d_block_to_arbiter_verified(cache_fsm_L2d_block_to_arbiter_verified),
+        .mesi_state_confirmation_d(mesi_state_confirmation_d),
         .write_to_L2d_verified(write_to_L2d_verified),
         .read_from_L3_request_from_L2d(read_from_L3_request_from_L2d),
         .write_back_to_L3_request_from_L2d(write_back_to_L3_request_from_L2d),
@@ -339,9 +367,11 @@ module topmodule (
         .L2d_cache_miss(L2d_cache_miss),
         .L2d_cache_ready(L2d_cache_ready),
         .cache_fsm_L2d_block_to_arbiter(cache_fsm_L2d_block_to_arbiter),
-        .cache_L3d_memory_address_to_array_L3d_to_arbiter_flag(cache_L3d_memory_address_to_array_L3d_to_arbiter_flag)
+        .cache_L3d_memory_address_to_array_L3d_to_arbiter_flag(cache_L3d_memory_address_to_array_L3d_to_arbiter_flag),
+        .lru_way_d(lru_way_d),
+        .mesi_state_confirmation_verified_flag_d(mesi_state_confirmation_verified_flag_d),
+        .data_stored_at_cache_L2d_from_main_memory(data_stored_at_cache_L2d_from_main_memory)
     );
-
 
     // Instantiate shared L3 cache
     cache_fsm_L3 #(
@@ -389,7 +419,8 @@ module topmodule (
         .write_back_to_L3_from_L2d_verified(write_back_to_L3_from_L2d_verified),
         .L3_cache_hit(L3_cache_hit),
         .L3_cache_miss(L3_cache_miss),
-        .L3_cache_ready(L3_cache_ready)
+        .L3_cache_ready(L3_cache_ready),
+        .data_stored_at_cache_L3_from_main_memory(data_stored_at_cache_L3_from_main_memory)
     );
 
     // Instantiate main_memory_controller
@@ -454,6 +485,14 @@ module topmodule (
         .write_back_to_L3_request_from_L2b(write_back_to_L3_request_from_L2b),
         .write_back_to_L3_request_from_L2c(write_back_to_L3_request_from_L2c),
         .write_back_to_L3_request_from_L2d(write_back_to_L3_request_from_L2d),
+        .lru_way_a(lru_way_a),
+        .lru_way_b(lru_way_b),
+        .lru_way_c(lru_way_c),
+        .lru_way_d(lru_way_d),
+        .mesi_state_confirmation_verified_flag_a(mesi_state_confirmation_verified_flag_a),
+        .mesi_state_confirmation_verified_flag_b(mesi_state_confirmation_verified_flag_b),
+        .mesi_state_confirmation_verified_flag_c(mesi_state_confirmation_verified_flag_c),
+        .mesi_state_confirmation_verified_flag_d(mesi_state_confirmation_verified_flag_d),
         .mesi_state_to_cache_a(mesi_state_to_cache_a),
         .mesi_state_to_cache_b(mesi_state_to_cache_b),
         .mesi_state_to_cache_c(mesi_state_to_cache_c),
@@ -485,6 +524,11 @@ module topmodule (
         .cache_L3a_memory_address_to_array_L3a_from_arbiter_flag(cache_L3a_memory_address_to_array_L3a_from_arbiter_flag),
         .cache_L3b_memory_address_to_array_L3b_from_arbiter_flag(cache_L3b_memory_address_to_array_L3b_from_arbiter_flag),
         .cache_L3c_memory_address_to_array_L3c_from_arbiter_flag(cache_L3c_memory_address_to_array_L3c_from_arbiter_flag),
-        .cache_L3d_memory_address_to_array_L3d_from_arbiter_flag(cache_L3d_memory_address_to_array_L3d_from_arbiter_flag)
+        .cache_L3d_memory_address_to_array_L3d_from_arbiter_flag(cache_L3d_memory_address_to_array_L3d_from_arbiter_flag),
+        .mesi_state_confirmation_a(mesi_state_confirmation_a),
+        .mesi_state_confirmation_b(mesi_state_confirmation_b),
+        .mesi_state_confirmation_c(mesi_state_confirmation_c),
+        .mesi_state_confirmation_d(mesi_state_confirmation_d),
+        .MESI_state_from_arbiter_for_testbench(MESI_state_from_arbiter_for_testbench)
     );
 endmodule

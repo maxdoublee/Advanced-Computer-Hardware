@@ -53,7 +53,8 @@ module cache_fsm_L3 #(
   output logic write_back_to_L3_from_L2d_verified,
   output logic L3_cache_hit,
   output logic L3_cache_miss,
-  output logic L3_cache_ready
+  output logic L3_cache_ready,
+  output logic [MAIN_MEMORY_DATA_WIDTH-1:0] data_stored_at_cache_L3_from_main_memory
 );
 
 	//Define cache states
@@ -77,6 +78,7 @@ module cache_fsm_L3 #(
 	logic [MAIN_MEMORY_DATA_WIDTH-1:0] L3_data[NUM_SETS-1:0]; //Array of data, one for each cache line
 
 	logic [TAG_WIDTH-1:0] tag;
+	logic [TAG_WIDTH-1:0] tag_value;
 	logic [INDEX_WIDTH-1:0] index;
     logic check_if_cache_hit_flag;
     logic allocate_flag;
@@ -89,28 +91,23 @@ module cache_fsm_L3 #(
     logic write_back_to_L3_from_L2b_flag;
     logic write_back_to_L3_from_L2c_flag;
     logic write_back_to_L3_from_L2d_flag;
-    logic read_from_L3a_flag;
-    logic read_from_L3b_flag;
-    logic read_from_L3c_flag;
-    logic read_from_L3d_flag;
 	logic cache_hit_flag;
 	logic main_memory_address_flag;
 	logic check_L3_allocate_once_to_comb_flag;
 	logic check_L3_allocate_once_to_set_ff_flag;
 	logic check_L3_allocate_once_to_reset_ff_flag;
+	logic reset_cache_hit_flag;
 
     always_ff @(posedge clk or posedge reset) begin
 		if (reset) begin
             // Set initial values
-			main_memory_write_data = 1'b0; 
+			main_memory_write_data = 1'b0;
+			cache_hit_flag = 1'b0;
 			dirty_flag = 1'b0;
 			clean_flag = 1'b0;
-			write_data_to_L2a_from_L3a = 1'b0;
-			write_data_to_L2b_from_L3b = 1'b0;
-			write_data_to_L2c_from_L3c = 1'b0;
-			write_data_to_L2d_from_L3d = 1'b0;
 			main_memory_address = 1'b0;
 			check_L3_allocate_once_to_comb_flag = 1'b0;
+			tag_value = 1'b0;
 			current_state <= IDLE;
             for (int set = 0; set < NUM_SETS; set++) begin
                 array_of_cache_L3a_memory_addresses[set] <= 0; // Initialize addresses to 0
@@ -137,6 +134,9 @@ module cache_fsm_L3 #(
 					end
 				end
             end
+			if(reset_cache_hit_flag) begin
+				cache_hit_flag = 1'b0;
+			end
             if(cache_array_container_flag) begin
 				if(cache_L3a_memory_address_to_array_L3a_from_arbiter_flag) begin 
 					array_of_cache_L3a_memory_addresses[index] = cache_L3a_memory_address; //Keep track of old cache addresses
@@ -157,15 +157,6 @@ module cache_fsm_L3 #(
 			end else if(write_back_to_L3_from_L2d_flag) begin
                 L3_data[index] = write_back_to_L3d_data;
             end
-            if(read_from_L3a_flag) begin
-                write_data_to_L2a_from_L3a = L3_data[index];
-			end else if(read_from_L3b_flag) begin 
-				write_data_to_L2b_from_L3b = L3_data[index];
-			end else if(read_from_L3c_flag) begin 
-				write_data_to_L2c_from_L3c = L3_data[index];
-			end else if(read_from_L3d_flag) begin 
-				write_data_to_L2d_from_L3d = L3_data[index];
-			end
 			if(check_L3_allocate_once_to_set_ff_flag) begin 
 				check_L3_allocate_once_to_comb_flag = 1'b1;
 			end
@@ -184,10 +175,12 @@ module cache_fsm_L3 #(
 				end
             end
             if(allocate_flag) begin
-                L3_tags[index] = tag; //Get tag from requested address and assign it to block 
+                L3_tags[index] = tag; //Get tag from requested address and assign it to block
+				tag_value = L3_tags[index];
                 L3_valid_bits[index] = 1'b1; //When the line is first brought into cache set it as valid 
                 L3_data[index] = main_memory_read_data; //Assign new memory data to the cache L2 block
-            end
+				data_stored_at_cache_L3_from_main_memory = L3_data[index];
+			end
             if(write_back_1_flag) begin 
                 //Keep track of old cache addresses
 				if(cache_L3a_memory_address_to_array_L3a_from_arbiter_flag) begin 
@@ -213,52 +206,53 @@ module cache_fsm_L3 #(
 		L3_cache_miss = 1'b0;
 		L3_cache_ready = 1'b0;
 		main_memory_read_request = 1'b0;
-        check_if_cache_hit_flag = 1'b0;
         allocate_flag = 1'b0;
         write_back_1_flag = 1'b0;
         write_back_2_flag = 1'b0;
-		L3a_ready = 1'b0;
-		L3b_ready = 1'b0;
-		L3c_ready = 1'b0;
-		L3d_ready = 1'b0;
 		tag = 1'b0;
 		index = 1'b0;
+		reset_cache_hit_flag = 1'b0;
 		main_memory_write_request = 1'b0;
 		write_back_to_L3_from_L2a_verified = 1'b0;
 		write_back_to_L3_from_L2b_verified = 1'b0;
 		write_back_to_L3_from_L2c_verified = 1'b0;
 		write_back_to_L3_from_L2d_verified = 1'b0;
-        cache_array_container_flag = 1'b0;;
+        cache_array_container_flag = 1'b0;
+		// write_data_to_L2a_from_L3a = 1'b0;
+		// write_data_to_L2b_from_L3b = 1'b0;
+		// write_data_to_L2c_from_L3c = 1'b0;
+		// write_data_to_L2d_from_L3d = 1'b0;
         write_back_to_L3_from_L2a_flag = 1'b0;
         write_back_to_L3_from_L2b_flag = 1'b0;
         write_back_to_L3_from_L2c_flag = 1'b0;
         write_back_to_L3_from_L2d_flag = 1'b0;
-        read_from_L3a_flag = 1'b0;
-        read_from_L3b_flag = 1'b0;
-        read_from_L3c_flag = 1'b0;
-        read_from_L3d_flag = 1'b0;
 		main_memory_address_flag = 1'b0;
 		check_L3_allocate_once_to_set_ff_flag = 1'b0;
 		check_L3_allocate_once_to_reset_ff_flag = 1'b0;
+		check_if_cache_hit_flag = 1'b0;
 		next_state = state_t'(1'b0);
 		//Bit-slicing to extract the appropriate number of bits for each segment of the cache address
 		if(cache_L3a_memory_address_to_array_L3a_from_arbiter_flag) begin 
-			tag = cache_L3a_memory_address[ADDRESS_WIDTH-3 -: TAG_WIDTH]; //minus three for processor id implementation (also zero is included)
-			index = cache_L3a_memory_address[INDEX_START -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
+			tag = cache_L3a_memory_address[(ADDRESS_WIDTH-PROCESSOR_ID_WIDTH)-1 -: TAG_WIDTH]; 
+        	index = cache_L3a_memory_address[(INDEX_START-1) -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
 		end else if(cache_L3b_memory_address_to_array_L3b_from_arbiter_flag) begin
-			tag = cache_L3b_memory_address[ADDRESS_WIDTH-3 -: TAG_WIDTH]; //minus three for processor id implementation (also zero is included)
-			index = cache_L3b_memory_address[INDEX_START -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
+			tag = cache_L3b_memory_address[(ADDRESS_WIDTH-PROCESSOR_ID_WIDTH)-1 -: TAG_WIDTH];
+        	index = cache_L3b_memory_address[(INDEX_START-1) -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
 		end else if(cache_L3c_memory_address_to_array_L3c_from_arbiter_flag) begin
-			tag = cache_L3c_memory_address[ADDRESS_WIDTH-3 -: TAG_WIDTH]; //minus three for processor id implementation (also zero is included)
-			index = cache_L3c_memory_address[INDEX_START -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
+			tag = cache_L3c_memory_address[(ADDRESS_WIDTH-PROCESSOR_ID_WIDTH)-1 -: TAG_WIDTH]; 
+        	index = cache_L3c_memory_address[(INDEX_START-1) -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
 		end else if(cache_L3d_memory_address_to_array_L3d_from_arbiter_flag) begin
-			tag = cache_L3d_memory_address[ADDRESS_WIDTH-3 -: TAG_WIDTH]; //minus three for processor id implementation (also zero is included)
-			index = cache_L3d_memory_address[INDEX_START -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
+			tag = cache_L3d_memory_address[(ADDRESS_WIDTH-PROCESSOR_ID_WIDTH)-1 -: TAG_WIDTH]; 
+        	index = cache_L3d_memory_address[(INDEX_START-1) -: INDEX_WIDTH]; //index starts in space place as it would for a non-id processor address despite shrinking the tag array 
 		end
 		//Basic Cache States 
 		case (current_state)
 			IDLE: begin
 				if(write_back_to_L3_request_from_L2a_arbiter || write_back_to_L3_request_from_L2b_arbiter || write_back_to_L3_request_from_L2c_arbiter || write_back_to_L3_request_from_L2d_arbiter || read_from_arbiter_request_from_L2a_to_L3 || read_from_arbiter_request_from_L2b_to_L3 || read_from_arbiter_request_from_L2c_to_L3 || read_from_arbiter_request_from_L2d_to_L3) begin
+					L3a_ready = 1'b0;
+					L3b_ready = 1'b0;
+					L3c_ready = 1'b0;
+					L3d_ready = 1'b0;
 					next_state = COMPARE;
 				end else begin
 					next_state = IDLE;
@@ -297,25 +291,25 @@ module cache_fsm_L3 #(
 						next_state = IDLE;
 					end else begin 
 						if(read_from_arbiter_request_from_L2a_to_L3) begin
-							read_from_L3a_flag = 1'b1;
+                			write_data_to_L2a_from_L3a = L3_data[index];
 							L3a_ready = 1'b1;
 							//Mark Cache ready 
 							L3_cache_ready = 1'b1;
 							next_state = IDLE;
 						end else if(read_from_arbiter_request_from_L2b_to_L3) begin 
-							read_from_L3b_flag = 1'b1;
+                			write_data_to_L2b_from_L3b = L3_data[index];
 							L3b_ready = 1'b1; 
 							//Mark Cache ready 
 							L3_cache_ready = 1'b1;
 							next_state = IDLE;
 						end else if(read_from_arbiter_request_from_L2c_to_L3) begin 
-							read_from_L3c_flag = 1'b1;
+							write_data_to_L2c_from_L3c = L3_data[index];
 							L3c_ready = 1'b1; 
 							//Mark Cache ready 
 							L3_cache_ready = 1'b1;
 							next_state = IDLE;
 						end else if(read_from_arbiter_request_from_L2d_to_L3) begin 
-							read_from_L3d_flag = 1'b1;
+							write_data_to_L2d_from_L3d = L3_data[index];
 							L3d_ready = 1'b1; 
 							//Mark Cache ready 
 							L3_cache_ready = 1'b1;
@@ -325,6 +319,7 @@ module cache_fsm_L3 #(
 							L3_cache_ready = 1'b1;
 							next_state = IDLE;
 						end
+						reset_cache_hit_flag = 1'b1;
 					end
 				end else begin
 					// Cache miss

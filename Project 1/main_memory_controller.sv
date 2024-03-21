@@ -23,7 +23,6 @@ module main_memory_controller (
 
 	//Internal main memory array
 	logic [MAIN_MEMORY_DATA_WIDTH-1:0] main_memory[MAIN_MEMORY_NUM_BLOCKS-1:0];
-	logic [MAIN_MEMORY_DATA_WIDTH-1:0] random_var;
 
 	//Temporary signals used for read and write operations (flags)
 	logic main_memory_read_in_progress, main_memory_write_in_progress;
@@ -60,7 +59,6 @@ module main_memory_controller (
 			end
 			if(write_to_main_memory_flag) begin
 				main_memory[index] = main_memory_write_data;
-				random_var = main_memory[index];
 				main_memory_ready = 1'b1;
 				request_reset_main_memory = 1'b1;
 			end
@@ -82,9 +80,6 @@ module main_memory_controller (
 		end else if (main_memory_write_in_progress) begin
 			//Handle write data and indicate memory is ready
 			write_to_main_memory_flag = 1'b1;
-			if(request_reset_main_memory) begin
-				reset_main_memory_ready = 1'b1;
-			end
 		end
 		if(request_reset_main_memory) begin
 			reset_main_memory_ready = 1'b1;

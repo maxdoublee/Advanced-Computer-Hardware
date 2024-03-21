@@ -56,6 +56,14 @@ module arbiter #(
     input logic write_back_to_L3_request_from_L2b,
     input logic write_back_to_L3_request_from_L2c,
     input logic write_back_to_L3_request_from_L2d,
+	input logic [1:0] lru_way_a,
+	input logic [1:0] lru_way_b,
+	input logic [1:0] lru_way_c,
+	input logic [1:0] lru_way_d,
+    input logic mesi_state_confirmation_verified_flag_a,
+    input logic mesi_state_confirmation_verified_flag_b,
+    input logic mesi_state_confirmation_verified_flag_c,
+    input logic mesi_state_confirmation_verified_flag_d,
 
     output logic [MESI_STATE_WIDTH-1:0] mesi_state_to_cache_a,
     output logic [MESI_STATE_WIDTH-1:0] mesi_state_to_cache_b,
@@ -88,7 +96,12 @@ module arbiter #(
     output logic cache_L3a_memory_address_to_array_L3a_from_arbiter_flag,
     output logic cache_L3b_memory_address_to_array_L3b_from_arbiter_flag,
     output logic cache_L3c_memory_address_to_array_L3c_from_arbiter_flag,
-    output logic cache_L3d_memory_address_to_array_L3d_from_arbiter_flag
+    output logic cache_L3d_memory_address_to_array_L3d_from_arbiter_flag,
+	output logic mesi_state_confirmation_a,
+	output logic mesi_state_confirmation_b,
+	output logic mesi_state_confirmation_c,
+	output logic mesi_state_confirmation_d,
+    output logic [MESI_STATE_WIDTH-1:0] MESI_state_from_arbiter_for_testbench
 );
 
     typedef enum logic [1:0] {
@@ -105,7 +118,6 @@ module arbiter #(
     logic [MAIN_MEMORY_DATA_WIDTH-1:0] local_L2d_data_storage[NUM_SETS-1:0][NUM_BLOCKS_PER_SET-1:0];
     logic [MESI_STATE_WIDTH-1:0] arbiter_MESI_states[NUM_SETS-1:0][NUM_BLOCKS_PER_SET-1:0];
 
-    logic [TAG_WIDTH-1:0] tag;
 	 logic [INDEX_WIDTH-1:0] index;
     logic first_arbiter_interaction;
     logic dataMismatch;
@@ -116,7 +128,12 @@ module arbiter #(
     logic modified_state_now_flag;
     logic shared_state_now_flag;
     logic invalid_state_now_flag;
+    logic reset_exclusive_state_now_flag;
+    logic reset_modified_state_now_flag;
+    logic reset_shared_state_now_flag;
+    logic reset_invalid_state_now_flag;
     logic update_arbiter_MESI_state_flag;
+    logic lru_way_arbiter;
 
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -126,7 +143,7 @@ module arbiter #(
             shared_state_now_flag = 1'b0;
             invalid_state_now_flag = 1'b0;
             dataMismatch = 1'b0; 
-
+            MESI_state_from_arbiter_for_testbench = 1'b0;
 			// Reset MESI states to Invalid (I) in the beginning
             for (int set = 0; set < NUM_SETS; set++) begin
                 for (int block = 0; block < NUM_BLOCKS_PER_SET; block++) begin
@@ -139,42 +156,54 @@ module arbiter #(
             end
         end else begin
             if(data_storage_flag) begin
-                local_L2a_data_storage[index][tag] = L2a_local_data;
-                local_L2b_data_storage[index][tag] = L2b_local_data;
-                local_L2c_data_storage[index][tag] = L2c_local_data;
-                local_L2d_data_storage[index][tag] = L2d_local_data;
+                local_L2a_data_storage[index][lru_way_arbiter] = L2a_local_data;
+                local_L2b_data_storage[index][lru_way_arbiter] = L2b_local_data;
+                local_L2c_data_storage[index][lru_way_arbiter] = L2c_local_data;
+                local_L2d_data_storage[index][lru_way_arbiter] = L2d_local_data;
             end
             if(dataMismatch_flag) begin
-                // Compare the data across all L2 caches for the given index and tag
-                dataMismatch = ((local_L2a_data_storage[index][tag] != local_L2b_data_storage[index][tag]) && (|local_L2a_data_storage[index][tag] && |local_L2b_data_storage[index][tag])) || 
-                ((local_L2a_data_storage[index][tag] != local_L2c_data_storage[index][tag]) && (|local_L2a_data_storage[index][tag] && |local_L2c_data_storage[index][tag])) ||
-                ((local_L2a_data_storage[index][tag] != local_L2d_data_storage[index][tag]) && (|local_L2a_data_storage[index][tag] && |local_L2d_data_storage[index][tag])) ||
-                ((local_L2b_data_storage[index][tag] != local_L2c_data_storage[index][tag]) && (|local_L2b_data_storage[index][tag] && |local_L2c_data_storage[index][tag])) ||
-                ((local_L2b_data_storage[index][tag] != local_L2d_data_storage[index][tag]) && (|local_L2b_data_storage[index][tag] && |local_L2d_data_storage[index][tag])) ||
-                ((local_L2c_data_storage[index][tag] != local_L2d_data_storage[index][tag]) && (|local_L2c_data_storage[index][tag] && |local_L2d_data_storage[index][tag]));
+                // Compare the data across all L2 caches for the given index and lru_way_arbiter
+                dataMismatch = ((local_L2a_data_storage[index][lru_way_arbiter] != local_L2b_data_storage[index][lru_way_arbiter]) && (|local_L2a_data_storage[index][lru_way_arbiter] && |local_L2b_data_storage[index][lru_way_arbiter])) || 
+                ((local_L2a_data_storage[index][lru_way_arbiter] != local_L2c_data_storage[index][lru_way_arbiter]) && (|local_L2a_data_storage[index][lru_way_arbiter] && |local_L2c_data_storage[index][lru_way_arbiter])) ||
+                ((local_L2a_data_storage[index][lru_way_arbiter] != local_L2d_data_storage[index][lru_way_arbiter]) && (|local_L2a_data_storage[index][lru_way_arbiter] && |local_L2d_data_storage[index][lru_way_arbiter])) ||
+                ((local_L2b_data_storage[index][lru_way_arbiter] != local_L2c_data_storage[index][lru_way_arbiter]) && (|local_L2b_data_storage[index][lru_way_arbiter] && |local_L2c_data_storage[index][lru_way_arbiter])) ||
+                ((local_L2b_data_storage[index][lru_way_arbiter] != local_L2d_data_storage[index][lru_way_arbiter]) && (|local_L2b_data_storage[index][lru_way_arbiter] && |local_L2d_data_storage[index][lru_way_arbiter])) ||
+                ((local_L2c_data_storage[index][lru_way_arbiter] != local_L2d_data_storage[index][lru_way_arbiter]) && (|local_L2c_data_storage[index][lru_way_arbiter] && |local_L2d_data_storage[index][lru_way_arbiter]));
             end
             if(check_arbiter_MESI_state_flag) begin
-                if (arbiter_MESI_states[index][tag] == MESI_INVALID) begin
-                    arbiter_MESI_states[index][tag] = MESI_EXCLUSIVE;
+                if (arbiter_MESI_states[index][lru_way_arbiter] == MESI_INVALID) begin
+                    arbiter_MESI_states[index][lru_way_arbiter] = MESI_EXCLUSIVE;
+                    MESI_state_from_arbiter_for_testbench = arbiter_MESI_states[index][lru_way_arbiter];
                     exclusive_state_now_flag = 1'b1;
-                end else if (arbiter_MESI_states[index][tag] == MESI_EXCLUSIVE) begin
+                end else if (arbiter_MESI_states[index][lru_way_arbiter] == MESI_EXCLUSIVE) begin
                     if (dataMismatch) begin
-                        arbiter_MESI_states[index][tag] = MESI_MODIFIED;
+                        arbiter_MESI_states[index][lru_way_arbiter] = MESI_MODIFIED;
                         modified_state_now_flag = 1'b1;
                     end else begin
-                        arbiter_MESI_states[index][tag] = MESI_SHARED;
+                        arbiter_MESI_states[index][lru_way_arbiter] = MESI_SHARED;
                         shared_state_now_flag = 1'b1;
                     end
-                end else if (arbiter_MESI_states[index][tag] == MESI_SHARED) begin 
+                end else if (arbiter_MESI_states[index][lru_way_arbiter] == MESI_SHARED) begin
                     shared_state_now_flag = 1'b1;
-                end else if (arbiter_MESI_states[index][tag] == MESI_MODIFIED) begin 
-                    arbiter_MESI_states[index][tag] = MESI_INVALID;
+                end else if (arbiter_MESI_states[index][lru_way_arbiter] == MESI_MODIFIED) begin 
+                    arbiter_MESI_states[index][lru_way_arbiter] = MESI_INVALID;
+                    MESI_state_from_arbiter_for_testbench = arbiter_MESI_states[index][lru_way_arbiter];
                     invalid_state_now_flag = 1'b1;
                 end
             end
+            if(reset_exclusive_state_now_flag) begin
+                exclusive_state_now_flag = 1'b0;
+            end else if(reset_modified_state_now_flag) begin
+                modified_state_now_flag = 1'b0;
+            end else if(reset_shared_state_now_flag) begin
+                shared_state_now_flag = 1'b0;
+            end else if(reset_invalid_state_now_flag) begin
+                invalid_state_now_flag = 1'b0;
+            end 
             if(update_arbiter_MESI_state_flag) begin
                 // New data has been written locally to data array so let the arbiter know about that change 
-                arbiter_MESI_states[index][tag] = MESI_MODIFIED;
+                arbiter_MESI_states[index][lru_way_arbiter] = MESI_MODIFIED;
+                MESI_state_from_arbiter_for_testbench = arbiter_MESI_states[index][lru_way_arbiter];
             end
         end
     end
@@ -184,29 +213,12 @@ module arbiter #(
         cache_fsm_L2b_block_to_arbiter_verified = 1'b0;
         cache_fsm_L2c_block_to_arbiter_verified = 1'b0;
         cache_fsm_L2d_block_to_arbiter_verified = 1'b0;
-        mesi_state_to_cache_a = 1'b0;
-        mesi_state_to_cache_b = 1'b0;
-        mesi_state_to_cache_c = 1'b0;
-        mesi_state_to_cache_d = 1'b0;
-        arbiter_verify_a = 1'b0;
-        arbiter_verify_b = 1'b0;
-        arbiter_verify_c = 1'b0;
-        arbiter_verify_d = 1'b0;
-        tag = 1'b0;
-        index = 1'b0;
-        first_arbiter_interaction = 1'b0;
         data_storage_flag = 1'b0;
         dataMismatch_flag = 1'b0;
-        check_arbiter_MESI_state_flag = 1'b0;
-        update_arbiter_MESI_state_flag = 1'b0;
         write_back_to_L3_request_from_L2a_arbiter = 1'b0;
         write_back_to_L3_request_from_L2b_arbiter = 1'b0;
         write_back_to_L3_request_from_L2c_arbiter = 1'b0;
         write_back_to_L3_request_from_L2d_arbiter = 1'b0;
-        // read_from_arbiter_request_from_L2a_to_L3 = 1'b0;
-        read_from_arbiter_request_from_L2b_to_L3 = 1'b0;
-        read_from_arbiter_request_from_L2c_to_L3 = 1'b0;
-        read_from_arbiter_request_from_L2d_to_L3 = 1'b0;
         arbiter_confirmed_L3_ready_for_L2a = 1'b0;
         arbiter_confirmed_L3_ready_for_L2b = 1'b0;
         arbiter_confirmed_L3_ready_for_L2c = 1'b0;
@@ -220,22 +232,30 @@ module arbiter #(
         cache_L3c_memory_address_to_array_L3c_from_arbiter_flag = 1'b0;
         cache_L3d_memory_address_to_array_L3d_from_arbiter_flag = 1'b0;
 
-        if(cache_fsm_L2a_block_to_arbiter) begin 
-            tag = block_a_to_determine_mesi_state_from_arbiter[ADDRESS_WIDTH-3 -: TAG_WIDTH];
-            index = block_a_to_determine_mesi_state_from_arbiter[INDEX_START -: INDEX_WIDTH];
+        if(cache_fsm_L2a_block_to_arbiter) begin
+            index = 1'b0;
+            index = block_a_to_determine_mesi_state_from_arbiter[INDEX_START-1 -: INDEX_WIDTH];
+            lru_way_arbiter = lru_way_a;
             cache_fsm_L2a_block_to_arbiter_verified = 1'b1;
+            first_arbiter_interaction = 1'b0;
         end else if(cache_fsm_L2b_block_to_arbiter) begin 
-            tag = block_b_to_determine_mesi_state_from_arbiter[ADDRESS_WIDTH-3 -: TAG_WIDTH];
-            index = block_b_to_determine_mesi_state_from_arbiter[INDEX_START -: INDEX_WIDTH];
+            index = 1'b0;
+            index = block_b_to_determine_mesi_state_from_arbiter[INDEX_START-1 -: INDEX_WIDTH];
+            lru_way_arbiter = lru_way_b;
             cache_fsm_L2b_block_to_arbiter_verified = 1'b1;
+            first_arbiter_interaction = 1'b0;
         end else if(cache_fsm_L2c_block_to_arbiter) begin
-            tag = block_c_to_determine_mesi_state_from_arbiter[ADDRESS_WIDTH-3 -: TAG_WIDTH];
-            index = block_c_to_determine_mesi_state_from_arbiter[INDEX_START -: INDEX_WIDTH];
+            index = 1'b0;
+            index = block_c_to_determine_mesi_state_from_arbiter[INDEX_START-1 -: INDEX_WIDTH];
+            lru_way_arbiter = lru_way_c;
             cache_fsm_L2c_block_to_arbiter_verified = 1'b1;
-        end else if(cache_fsm_L2d_block_to_arbiter) begin 
-            tag = block_d_to_determine_mesi_state_from_arbiter[ADDRESS_WIDTH-3 -: TAG_WIDTH];
-            index = block_d_to_determine_mesi_state_from_arbiter[INDEX_START -: INDEX_WIDTH];
+            first_arbiter_interaction = 1'b0;
+        end else if(cache_fsm_L2d_block_to_arbiter) begin
+            index = 1'b0;
+            index = block_d_to_determine_mesi_state_from_arbiter[INDEX_START-1 -: INDEX_WIDTH];
+            lru_way_arbiter = lru_way_d;
             cache_fsm_L2d_block_to_arbiter_verified = 1'b1;
+            first_arbiter_interaction = 1'b0;
         end 
         
         data_storage_flag = 1'b1;
@@ -244,87 +264,180 @@ module arbiter #(
 
         // Read mesi states from arbiter 
         if (arbiter_read_update_from_L2a_cache_modules && !first_arbiter_interaction) begin
+            mesi_state_confirmation_a = 1'b0;
+            mesi_state_to_cache_a = 1'b0;
+            arbiter_verify_a = 1'b0;
+            check_arbiter_MESI_state_flag = 1'b0;
+            reset_exclusive_state_now_flag = 1'b0;
+            reset_modified_state_now_flag = 1'b0;
+            reset_shared_state_now_flag = 1'b0;
+            reset_invalid_state_now_flag = 1'b0;
             //When mesi state is found, set its mesi state into local cache to evaluate the block properly
             check_arbiter_MESI_state_flag = 1'b1;
-            if(exclusive_state_now_flag) begin 
+            if(exclusive_state_now_flag) begin
                 mesi_state_to_cache_a = MESI_EXCLUSIVE;
+                mesi_state_confirmation_a = 1'b1;
                 arbiter_verify_a = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_exclusive_state_now_flag = 1'b1;
             end else if(modified_state_now_flag) begin 
                 mesi_state_to_cache_a = MESI_MODIFIED;
+                mesi_state_confirmation_a = 1'b1;
                 arbiter_verify_a = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_modified_state_now_flag = 1'b1;
             end else if(shared_state_now_flag) begin
+                mesi_state_confirmation_a = 1'b1;
                 mesi_state_to_cache_a = MESI_SHARED;
+                mesi_state_confirmation_a = 1'b1;
                 arbiter_verify_a = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_shared_state_now_flag = 1'b1;
             end else if(invalid_state_now_flag) begin
+                mesi_state_confirmation_a = 1'b1;
                 mesi_state_to_cache_a = MESI_INVALID;
                 arbiter_verify_a = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_invalid_state_now_flag = 1'b1;
             end
             first_arbiter_interaction = 1'b1;
         end else if(arbiter_read_update_from_L2b_cache_modules && !first_arbiter_interaction) begin
+            mesi_state_confirmation_b = 1'b0;
+            mesi_state_to_cache_b = 1'b0;
+            arbiter_verify_b = 1'b0;
+            check_arbiter_MESI_state_flag = 1'b0;
+            reset_exclusive_state_now_flag = 1'b0;
+            reset_modified_state_now_flag = 1'b0;
+            reset_shared_state_now_flag = 1'b0;
+            reset_invalid_state_now_flag = 1'b0;
             check_arbiter_MESI_state_flag = 1'b1;
             if(exclusive_state_now_flag) begin 
                 mesi_state_to_cache_b = MESI_EXCLUSIVE;
+                mesi_state_confirmation_b = 1'b1;
                 arbiter_verify_b = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_exclusive_state_now_flag = 1'b1;
             end else if(modified_state_now_flag) begin 
                 mesi_state_to_cache_b = MESI_MODIFIED;
+                mesi_state_confirmation_b = 1'b1;
                 arbiter_verify_b = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_modified_state_now_flag = 1'b1;
             end else if(shared_state_now_flag) begin
                 mesi_state_to_cache_b = MESI_SHARED;
+                mesi_state_confirmation_b = 1'b1;
                 arbiter_verify_b = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_shared_state_now_flag = 1'b1;
             end else if(invalid_state_now_flag) begin
+                mesi_state_confirmation_b = 1'b1;
                 mesi_state_to_cache_b = MESI_INVALID;
                 arbiter_verify_b = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_invalid_state_now_flag = 1'b1;
             end
             first_arbiter_interaction = 1'b1;
         end else if(arbiter_read_update_from_L2c_cache_modules && !first_arbiter_interaction) begin
+            mesi_state_confirmation_c = 1'b0;
+            mesi_state_to_cache_c = 1'b0;
+            arbiter_verify_c = 1'b0;
+            check_arbiter_MESI_state_flag = 1'b0;
+            reset_exclusive_state_now_flag = 1'b0;
+            reset_modified_state_now_flag = 1'b0;
+            reset_shared_state_now_flag = 1'b0;
+            reset_invalid_state_now_flag = 1'b0;
             check_arbiter_MESI_state_flag = 1'b1;
             if(exclusive_state_now_flag) begin 
                 mesi_state_to_cache_c = MESI_EXCLUSIVE;
+                mesi_state_confirmation_c = 1'b1;
                 arbiter_verify_c = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_exclusive_state_now_flag = 1'b1;
             end else if(modified_state_now_flag) begin 
                 mesi_state_to_cache_c = MESI_MODIFIED;
+                mesi_state_confirmation_c = 1'b1;
                 arbiter_verify_c = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_modified_state_now_flag = 1'b1;
             end else if(shared_state_now_flag) begin
                 mesi_state_to_cache_c = MESI_SHARED;
+                mesi_state_confirmation_c = 1'b1;
                 arbiter_verify_c = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_shared_state_now_flag = 1'b1;
             end else if(invalid_state_now_flag) begin
                 mesi_state_to_cache_c = MESI_INVALID;
+                mesi_state_confirmation_c = 1'b1;
                 arbiter_verify_c = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_invalid_state_now_flag = 1'b1;
             end
             first_arbiter_interaction = 1'b1;
         end else if(arbiter_read_update_from_L2d_cache_modules && !first_arbiter_interaction) begin
+            mesi_state_confirmation_d = 1'b0;
+            mesi_state_to_cache_d = 1'b0;
+            arbiter_verify_d = 1'b0;
+            check_arbiter_MESI_state_flag = 1'b0;
+            reset_exclusive_state_now_flag = 1'b0;
+            reset_modified_state_now_flag = 1'b0;
+            reset_shared_state_now_flag = 1'b0;
+            reset_invalid_state_now_flag = 1'b0;
             check_arbiter_MESI_state_flag = 1'b1;
             if(exclusive_state_now_flag) begin 
                 mesi_state_to_cache_d = MESI_EXCLUSIVE;
+                mesi_state_confirmation_d = 1'b1;
                 arbiter_verify_d = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_exclusive_state_now_flag = 1'b1;
             end else if(modified_state_now_flag) begin 
                 mesi_state_to_cache_d = MESI_MODIFIED;
+                mesi_state_confirmation_d = 1'b1;
                 arbiter_verify_d = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_modified_state_now_flag = 1'b1;
             end else if(shared_state_now_flag) begin
                 mesi_state_to_cache_d = MESI_SHARED;
+                mesi_state_confirmation_d = 1'b1;
                 arbiter_verify_d = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_shared_state_now_flag = 1'b1;
             end else if(invalid_state_now_flag) begin
                 mesi_state_to_cache_d = MESI_INVALID;
+                mesi_state_confirmation_d = 1'b1;
                 arbiter_verify_d = 1'b1;
+                check_arbiter_MESI_state_flag = 1'b0;
+                reset_invalid_state_now_flag = 1'b1;
             end
             first_arbiter_interaction = 1'b1;
         end else begin
             if(arbiter_write_update_from_L2a_cache_modules && !first_arbiter_interaction) begin
+                mesi_state_to_cache_a = 1'b0;
+                arbiter_verify_a = 1'b0;
+                update_arbiter_MESI_state_flag = 1'b0;
                 update_arbiter_MESI_state_flag = 1'b1;
                 mesi_state_to_cache_a = MESI_MODIFIED;
                 arbiter_verify_a = 1'b1;
                 first_arbiter_interaction = 1'b1;
             end else if(arbiter_write_update_from_L2b_cache_modules && !first_arbiter_interaction) begin
+                mesi_state_to_cache_b = 1'b0;
+                arbiter_verify_b = 1'b0;
+                update_arbiter_MESI_state_flag = 1'b0;
                 update_arbiter_MESI_state_flag = 1'b1;
                 mesi_state_to_cache_b = MESI_MODIFIED;
                 arbiter_verify_b = 1'b1;
                 first_arbiter_interaction = 1'b1;
             end else if(arbiter_write_update_from_L2c_cache_modules && !first_arbiter_interaction) begin
+                mesi_state_to_cache_c = 1'b0;
+                arbiter_verify_c = 1'b0;
+                update_arbiter_MESI_state_flag = 1'b0;
                 update_arbiter_MESI_state_flag = 1'b1;
                 mesi_state_to_cache_c = MESI_MODIFIED;
                 arbiter_verify_c = 1'b1;
                 first_arbiter_interaction = 1'b1;
             end else if(arbiter_write_update_from_L2d_cache_modules && !first_arbiter_interaction) begin
+                mesi_state_to_cache_d = 1'b0;
+                arbiter_verify_d = 1'b0;
+                update_arbiter_MESI_state_flag = 1'b0;
                 update_arbiter_MESI_state_flag = 1'b1;
                 mesi_state_to_cache_d = MESI_MODIFIED;
                 arbiter_verify_d = 1'b1;
@@ -332,19 +445,33 @@ module arbiter #(
             end 
         end
 
+        if(mesi_state_confirmation_verified_flag_a) begin 
+            mesi_state_confirmation_a = 1'b0;
+        end else if(mesi_state_confirmation_verified_flag_b) begin 
+            mesi_state_confirmation_b = 1'b0;
+        end else if(mesi_state_confirmation_verified_flag_c) begin 
+            mesi_state_confirmation_c = 1'b0;
+        end else if(mesi_state_confirmation_verified_flag_d) begin 
+            mesi_state_confirmation_d = 1'b0;
+        end
+
         //Acknowledgement from L2 caches in order to restart mesi state checking 
         if(acknowledge_arbiter_verify_a) begin //from L2a
             first_arbiter_interaction = 1'b0;
             arbiter_verify_a = 1'b0;
+            update_arbiter_MESI_state_flag = 1'b0;
         end else if(acknowledge_arbiter_verify_b) begin //from L2b
             first_arbiter_interaction = 1'b0;
             arbiter_verify_b = 1'b0;
+            update_arbiter_MESI_state_flag = 1'b0;
         end else if(acknowledge_arbiter_verify_c) begin //from L2c
             first_arbiter_interaction = 1'b0;
             arbiter_verify_c = 1'b0;
+            update_arbiter_MESI_state_flag = 1'b0;
         end else if(acknowledge_arbiter_verify_d) begin //from L2d
             first_arbiter_interaction = 1'b0;
             arbiter_verify_d = 1'b0;
+            update_arbiter_MESI_state_flag = 1'b0;
         end
 
         //Signals from L2 cache that are sent to L3 according to which L2 module sends the signal
@@ -352,9 +479,9 @@ module arbiter #(
             read_from_arbiter_request_from_L2a_to_L3 = 1'b1;
         end else if(read_from_L3_request_from_L2b) begin
             read_from_arbiter_request_from_L2b_to_L3 = 1'b1;
-        end else if(read_from_L3_request_from_L2b) begin
+        end else if(read_from_L3_request_from_L2c) begin
             read_from_arbiter_request_from_L2c_to_L3 = 1'b1;
-        end else if(read_from_L3_request_from_L2b) begin
+        end else if(read_from_L3_request_from_L2d) begin
             read_from_arbiter_request_from_L2d_to_L3 = 1'b1;
         end 
 
@@ -367,18 +494,20 @@ module arbiter #(
         end else if(write_back_to_L3_request_from_L2d) begin
             write_back_to_L3_request_from_L2d_arbiter = 1'b1;
         end
-
+        
         //Signals from L3 cache that are sent to the L2 level to confirm the correct L2 module allocates from L3
         if(L3a_ready) begin
-            $display("jcwya");
             arbiter_confirmed_L3_ready_for_L2a = 1'b1; 
             read_from_arbiter_request_from_L2a_to_L3 = 1'b0;
         end else if(L3b_ready) begin
             arbiter_confirmed_L3_ready_for_L2b = 1'b1; 
+            read_from_arbiter_request_from_L2b_to_L3 = 1'b0;
         end else if(L3c_ready) begin
             arbiter_confirmed_L3_ready_for_L2c = 1'b1; 
+            read_from_arbiter_request_from_L2c_to_L3 = 1'b0;
         end else if(L3d_ready) begin
             arbiter_confirmed_L3_ready_for_L2d = 1'b1; 
+            read_from_arbiter_request_from_L2d_to_L3 = 1'b0;
         end 
 
         if(write_back_to_L3_from_L2a_verified) begin
