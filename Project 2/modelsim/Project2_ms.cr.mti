@@ -1,0 +1,58 @@
+C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/topmodule.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/topmodule.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_module
+
+Top level modules:
+	top_module
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/multiplier_unit.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/multiplier_unit.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module multiplier_unit
+
+Top level modules:
+	multiplier_unit
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_queue.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_queue.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instruction_queue
+
+Top level modules:
+	instruction_queue
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_decoder.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_decoder.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instruction_decoder
+
+Top level modules:
+	instruction_decoder
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/adder_unit.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/adder_unit.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module adder_unit
+
+Top level modules:
+	adder_unit
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/testbench.sv {2 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/testbench.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench
+** Warning: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/testbench.sv(708): (vlog-2643) Unterminated string literal continues onto next line.
+
+Top level modules:
+	testbench
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/register_file.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/register_file.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/memory_unit.sv {1 {vlog -work work -sv -stats=none C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/memory_unit.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_unit
+
+Top level modules:
+	memory_unit
+
+} {} {}}

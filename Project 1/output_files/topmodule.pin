@@ -1,0 +1,973 @@
+ -- Copyright (C) 2020  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and any partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details, at
+ -- https://fpgasoftware.intel.com/eula.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCPGM        : Dedicated power pin for configuration, which MUST be connected to 1.8V, 2.5V, 3.0V or 3.3V depending on the requirements of the configuration device.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.1V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 3A:       2.5V
+ --                  Bank 3B:       2.5V
+ --                  Bank 4A:       2.5V
+ --                  Bank 5A:       2.5V
+ --                  Bank 5B:       2.5V
+ --                  Bank 6A:       2.5V
+ --                  Bank 7A:  2.5V
+ --                  Bank 8A:  2.5V
+ --                  Bank 9A:  Dedicated configuration pins only, no VCCIO required.
+ -- RREF          : External reference resistor for the quad, MUST be connected to
+ --                 GND via a 2k Ohm resistor.
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ -- GXB_NC        : Unused GXB Transmitter or dedicated clock output pin. This pin
+ --                 must not be connected.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+CHIP  "topmodule"  ASSIGNED TO AN: 5CEBA7F31C7
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+cache_L1a_memory_address[8]  : A2        : input  : 2.5 V             :         : 8A        : N              
+cache_1d_write_data[21]      : A3        : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[98]   : A4        : input  : 2.5 V             :         : 8A        : N              
+cache_1d_write_data[7]       : A5        : input  : 2.5 V             :         : 8A        : N              
+cache_1c_write_data[15]      : A6        : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : A7        : power  :                   : 2.5V    : 8A        :                
+cache_1a_write_data[9]       : A8        : input  : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 8A        :                
+cache_L1c_memory_address[18] : A10       : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[2]  : A11       : input  : 2.5 V             :         : 8A        : N              
+GND                          : A12       : gnd    :                   :         :           :                
+cache_L1d_memory_address[4]  : A13       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[24] : A14       : input  : 2.5 V             :         : 7A        : N              
+cache_L1c_memory_address[16] : A15       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[1]  : A16       : input  : 2.5 V             :         : 7A        : N              
+GND                          : A17       : gnd    :                   :         :           :                
+cache_1d_write_data[17]      : A18       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[93]   : A19       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7A        :                
+cache_1c_write_data[8]       : A21       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : A22       : power  :                   : 2.5V    : 7A        :                
+cache_L1d_memory_address[27] : A23       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[36]   : A24       : input  : 2.5 V             :         : 7A        : N              
+cache_L1c_memory_address[4]  : A25       : input  : 2.5 V             :         : 7A        : N              
+cache_L1a_memory_address[25] : A26       : input  : 2.5 V             :         : 7A        : N              
+GND                          : A27       : gnd    :                   :         :           :                
+main_memory_write_data[104]  : A28       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[106]  : A29       : input  : 2.5 V             :         : 6A        : N              
+GND                          : AA1       : gnd    :                   :         :           :                
+GND                          : AA2       : gnd    :                   :         :           :                
+GND                          : AA3       : gnd    :                   :         :           :                
+GND                          : AA4       : gnd    :                   :         :           :                
+VCC                          : AA5       : power  :                   : 1.1V    :           :                
+GND                          : AA6       : gnd    :                   :         :           :                
+nCSO, DATA4                  : AA7       :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :         : 3A        :                
+cache_1b_write_data[27]      : AA9       : input  : 2.5 V             :         : 3A        : N              
+main_memory_address[1]       : AA10      : input  : 2.5 V             :         : 3A        : N              
+cache_1c_write_data[26]      : AA11      : input  : 2.5 V             :         : 3A        : N              
+VCCIO3B                      : AA12      : power  :                   : 2.5V    : 3B        :                
+cache_L1c_memory_address[5]  : AA13      : input  : 2.5 V             :         : 3B        : N              
+cache_1c_write_data[16]      : AA14      : input  : 2.5 V             :         : 3B        : N              
+cache_L1a_memory_address[18] : AA15      : input  : 2.5 V             :         : 3B        : N              
+cache_L1b_memory_address[19] : AA16      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AA17      : gnd    :                   :         :           :                
+cache_L1d_memory_address[7]  : AA18      : input  : 2.5 V             :         : 4A        : N              
+cache_b_write_request        : AA19      : input  : 2.5 V             :         : 4A        : N              
+cache_1a_write_data[4]       : AA20      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 4A        :                
+VCCIO5A                      : AA22      : power  :                   : 2.5V    : 5A        :                
+cache_1b_write_data[6]       : AA23      : input  : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA24      :        :                   :         : 5A        :                
+cache_1d_write_data[28]      : AA25      : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[102]  : AA26      : input  : 2.5 V             :         : 5A        : N              
+GND                          : AA27      : gnd    :                   :         :           :                
+cache_1b_write_data[17]      : AA28      : input  : 2.5 V             :         : 5B        : N              
+cache_1a_write_data[14]      : AA29      : input  : 2.5 V             :         : 5B        : N              
+cache_d_read_request         : AA30      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AB1       : gnd    :                   :         :           :                
+GND                          : AB2       : gnd    :                   :         :           :                
+DNU                          : AB3       :        :                   :         :           :                
+DNU                          : AB4       :        :                   :         :           :                
+GND                          : AB5       : gnd    :                   :         :           :                
+VCCA_FPLL                    : AB6       : power  :                   : 2.5V    :           :                
+AS_DATA3, DATA3              : AB7       :        :                   :         : 3A        :                
+cache_L1b_memory_address[30] : AB8       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3A        :                
+GND                          : AB10      : gnd    :                   :         :           :                
+VCCPD3A                      : AB11      : power  :                   : 2.5V    : 3A        :                
+cache_1b_write_data[8]       : AB12      : input  : 2.5 V             :         : 3B        : N              
+cache_L1a_memory_address[28] : AB13      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3B        :                
+VCCIO4A                      : AB15      : power  :                   : 2.5V    : 4A        :                
+cache_1c_write_data[24]      : AB16      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[15] : AB17      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[108]  : AB18      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[14] : AB19      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AB20      : gnd    :                   :         :           :                
+cache_a_write_request        : AB21      : input  : 2.5 V             :         : 4A        : N              
+cache_L1d_memory_address[12] : AB22      : input  : 2.5 V             :         : 4A        : N              
+VCCA_FPLL                    : AB23      : power  :                   : 2.5V    :           :                
+VCCPGM                       : AB24      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+VCCIO5A                      : AB25      : power  :                   : 2.5V    : 5A        :                
+main_memory_address[11]      : AB26      : input  : 2.5 V             :         : 5A        : N              
+cache_1c_write_data[21]      : AB27      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[68]   : AB28      : input  : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB29      :        :                   :         : 5B        :                
+GND                          : AB30      : gnd    :                   :         :           :                
+GND                          : AC1       : gnd    :                   :         :           :                
+GND                          : AC2       : gnd    :                   :         :           :                
+GND                          : AC3       : gnd    :                   :         :           :                
+GND                          : AC4       : gnd    :                   :         :           :                
+VCC                          : AC5       : power  :                   : 1.1V    :           :                
+GND                          : AC6       : gnd    :                   :         :           :                
+TCK                          : AC7       : input  :                   :         : 3A        :                
+VCCIO3A                      : AC8       : power  :                   : 2.5V    : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC9       :        :                   :         : 3A        :                
+VCC_AUX                      : AC10      : power  :                   : 2.5V    :           :                
+VCCPGM                       : AC11      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+VCCPD3B4A                    : AC12      : power  :                   : 2.5V    : 3B, 4A    :                
+GND                          : AC13      : gnd    :                   :         :           :                
+cache_L1c_memory_address[30] : AC14      : input  : 2.5 V             :         : 3B        : N              
+cache_1c_write_data[20]      : AC15      : input  : 2.5 V             :         : 4A        : N              
+VCC_AUX                      : AC16      : power  :                   : 2.5V    :           :                
+VCCPD3B4A                    : AC17      : power  :                   : 2.5V    : 3B, 4A    :                
+VCCIO4A                      : AC18      : power  :                   : 2.5V    : 4A        :                
+cache_1c_write_data[7]       : AC19      : input  : 2.5 V             :         : 4A        : N              
+VCCPD3B4A                    : AC20      : power  :                   : 2.5V    : 3B, 4A    :                
+cache_L1b_memory_address[2]  : AC21      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[26] : AC22      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AC23      : gnd    :                   :         :           :                
+cache_1a_write_data[5]       : AC24      : input  : 2.5 V             :         : 5A        : N              
+VREFB5AN0                    : AC25      : power  :                   :         : 5A        :                
+cache_1a_write_data[10]      : AC26      : input  : 2.5 V             :         : 5A        : N              
+cache_L1a_memory_address[31] : AC27      : input  : 2.5 V             :         : 5A        : N              
+VCCIO5B                      : AC28      : power  :                   : 2.5V    : 5B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC29      :        :                   :         : 5B        :                
+cache_L1b_memory_address[22] : AC30      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AD1       : gnd    :                   :         :           :                
+GND                          : AD2       : gnd    :                   :         :           :                
+DNU                          : AD3       :        :                   :         :           :                
+DNU                          : AD4       :        :                   :         :           :                
+GND                          : AD5       : gnd    :                   :         :           :                
+VCC                          : AD6       : power  :                   : 1.1V    :           :                
+GND                          : AD7       : gnd    :                   :         :           :                
+DNU                          : AD8       :        :                   :         :           :                
+main_memory_write_data[39]   : AD9       : input  : 2.5 V             :         : 3A        : N              
+VCCPD3A                      : AD10      : power  :                   : 2.5V    : 3A        :                
+VCCIO3A                      : AD11      : power  :                   : 2.5V    : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD12      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD13      :        :                   :         : 3B        :                
+DNU                          : AD14      :        :                   :         :           :                
+VCCPD3B4A                    : AD15      : power  :                   : 2.5V    : 3B, 4A    :                
+GND                          : AD16      : gnd    :                   :         :           :                
+main_memory_write_data[76]   : AD17      : input  : 2.5 V             :         : 4A        : N              
+cache_L1a_memory_address[16] : AD18      : input  : 2.5 V             :         : 4A        : N              
+cache_1b_write_data[29]      : AD19      : input  : 2.5 V             :         : 4A        : N              
+cache_1c_write_data[0]       : AD20      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AD21      : power  :                   : 2.5V    : 4A        :                
+VCC_AUX                      : AD22      : power  :                   : 2.5V    :           :                
+main_memory_write_data[101]  : AD23      : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[8]    : AD24      : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[120]  : AD25      : input  : 2.5 V             :         : 5A        : N              
+GND                          : AD26      : gnd    :                   :         :           :                
+cache_L1b_memory_address[8]  : AD27      : input  : 2.5 V             :         : 5A        : N              
+main_memory_address[12]      : AD28      : input  : 2.5 V             :         : 5B        : N              
+cache_1b_write_data[7]       : AD29      : input  : 2.5 V             :         : 5B        : N              
+main_memory_address[13]      : AD30      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AE1       : gnd    :                   :         :           :                
+GND                          : AE2       : gnd    :                   :         :           :                
+GND                          : AE3       : gnd    :                   :         :           :                
+GND                          : AE4       : gnd    :                   :         :           :                
+AS_DATA1, DATA1              : AE5       :        :                   :         : 3A        :                
+GND                          : AE6       : gnd    :                   :         :           :                
+AS_DATA2, DATA2              : AE7       :        :                   :         : 3A        :                
+VREFB3AN0                    : AE8       : power  :                   :         : 3A        :                
+GND                          : AE9       : gnd    :                   :         :           :                
+main_memory_write_data[42]   : AE10      : input  : 2.5 V             :         : 3B        : N              
+VCCPD3B4A                    : AE11      : power  :                   : 2.5V    : 3B, 4A    :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :         : 3B        :                
+cache_1c_write_data[19]      : AE13      : input  : 2.5 V             :         : 3B        : N              
+VCCIO3B                      : AE14      : power  :                   : 2.5V    : 3B        :                
+cache_1a_write_data[6]       : AE15      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[115]  : AE16      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4A        :                
+main_memory_write_data[96]   : AE18      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AE19      : gnd    :                   :         :           :                
+cache_1b_write_data[20]      : AE20      : input  : 2.5 V             :         : 4A        : N              
+VCCPD3B4A                    : AE21      : power  :                   : 2.5V    : 3B, 4A    :                
+cache_1c_write_data[13]      : AE22      : input  : 2.5 V             :         : 4A        : N              
+cache_1a_write_data[30]      : AE23      : input  : 2.5 V             :         : 5A        : N              
+VCCIO5A                      : AE24      : power  :                   : 2.5V    : 5A        :                
+main_memory_write_data[52]   : AE25      : input  : 2.5 V             :         : 5A        : N              
+cache_L1d_memory_address[20] : AE26      : input  : 2.5 V             :         : 5A        : N              
+cache_L1d_memory_address[28] : AE27      : input  : 2.5 V             :         : 5A        : N              
+main_memory_address[20]      : AE28      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AE29      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE30      :        :                   :         : 5B        :                
+GND                          : AF1       : gnd    :                   :         :           :                
+GND                          : AF2       : gnd    :                   :         :           :                
+DNU                          : AF3       :        :                   :         :           :                
+DNU                          : AF4       :        :                   :         :           :                
+GND                          : AF5       : gnd    :                   :         :           :                
+cache_1c_write_data[27]      : AF6       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF7       :        :                   :         : 3A        :                
+cache_L1c_memory_address[1]  : AF8       : input  : 2.5 V             :         : 3A        : N              
+main_memory_write_data[31]   : AF9       : input  : 2.5 V             :         : 3B        : N              
+cache_1d_write_data[2]       : AF10      : input  : 2.5 V             :         : 3B        : N              
+cache_1d_write_data[25]      : AF11      : input  : 2.5 V             :         : 3B        : N              
+GND                          : AF12      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3B        :                
+cache_L1d_memory_address[0]  : AF14      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[78]   : AF15      : input  : 2.5 V             :         : 4A        : N              
+cache_1b_write_data[10]      : AF16      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AF17      : power  :                   : 2.5V    : 4A        :                
+cache_L1a_memory_address[29] : AF18      : input  : 2.5 V             :         : 4A        : N              
+main_memory_address[25]      : AF19      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
+main_memory_write_data[71]   : AF21      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AF22      : gnd    :                   :         :           :                
+cache_1b_write_data[19]      : AF23      : input  : 2.5 V             :         : 4A        : N              
+cache_1c_write_data[22]      : AF24      : input  : 2.5 V             :         : 5A        : N              
+cache_1d_write_data[18]      : AF25      : input  : 2.5 V             :         : 5A        : N              
+cache_1b_write_data[31]      : AF26      : input  : 2.5 V             :         : 5A        : N              
+VCCIO5A                      : AF27      : power  :                   : 2.5V    : 5A        :                
+cache_L1d_memory_address[15] : AF28      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[77]   : AF29      : input  : 2.5 V             :         : 5B        : N              
+cache_L1a_memory_address[23] : AF30      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AG1       : gnd    :                   :         :           :                
+GND                          : AG2       : gnd    :                   :         :           :                
+GND                          : AG3       : gnd    :                   :         :           :                
+GND                          : AG4       : gnd    :                   :         :           :                
+AS_DATA0, ASDO, DATA0        : AG5       :        :                   :         : 3A        :                
+main_memory_write_data[124]  : AG6       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :         : 3A        :                
+cache_1a_write_data[18]      : AG8       : input  : 2.5 V             :         : 3A        : N              
+cache_L1c_memory_address[29] : AG9       : input  : 2.5 V             :         : 3B        : N              
+VCCIO3B                      : AG10      : power  :                   : 2.5V    : 3B        :                
+main_memory_write_data[122]  : AG11      : input  : 2.5 V             :         : 3B        : N              
+cache_L1b_memory_address[7]  : AG12      : input  : 2.5 V             :         : 3B        : N              
+cache_1a_write_data[0]       : AG13      : input  : 2.5 V             :         : 3B        : N              
+cache_L1d_memory_address[6]  : AG14      : input  : 2.5 V             :         : 3B        : N              
+GND                          : AG15      : gnd    :                   :         :           :                
+main_memory_write_data[103]  : AG16      : input  : 2.5 V             :         : 4A        : N              
+cache_L1a_memory_address[17] : AG17      : input  : 2.5 V             :         : 4A        : N              
+cache_1c_write_data[14]      : AG18      : input  : 2.5 V             :         : 4A        : N              
+cache_1b_write_data[22]      : AG19      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AG20      : power  :                   : 2.5V    : 4A        :                
+cache_1c_write_data[2]       : AG21      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[66]   : AG22      : input  : 2.5 V             :         : 4A        : N              
+cache_L1a_memory_address[26] : AG23      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[22] : AG24      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AG25      : gnd    :                   :         :           :                
+cache_1b_write_data[28]      : AG26      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[116]  : AG27      : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[53]   : AG28      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[59]   : AG29      : input  : 2.5 V             :         : 5B        : N              
+VCCIO5B                      : AG30      : power  :                   : 2.5V    : 5B        :                
+GND                          : AH1       : gnd    :                   :         :           :                
+GND                          : AH2       : gnd    :                   :         :           :                
+GND                          : AH3       : gnd    :                   :         :           :                
+main_memory_write_data[95]   : AH4       : input  : 2.5 V             :         : 3A        : N              
+main_memory_address[29]      : AH5       : input  : 2.5 V             :         : 3A        : N              
+cache_L1c_memory_address[12] : AH6       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH7       :        :                   :         : 3A        :                
+GND                          : AH8       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH9       :        :                   :         : 3B        :                
+cache_L1a_memory_address[11] : AH10      : input  : 2.5 V             :         : 3B        : N              
+cache_L1d_memory_address[29] : AH11      : input  : 2.5 V             :         : 3B        : N              
+cache_L1d_memory_address[1]  : AH12      : input  : 2.5 V             :         : 3B        : N              
+VCCIO3B                      : AH13      : power  :                   : 2.5V    : 3B        :                
+cache_1c_write_data[23]      : AH14      : input  : 2.5 V             :         : 4A        : N              
+cache_1a_write_data[16]      : AH15      : input  : 2.5 V             :         : 4A        : N              
+VREFB4AN0                    : AH16      : power  :                   :         : 4A        :                
+main_memory_write_data[2]    : AH17      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AH18      : gnd    :                   :         :           :                
+cache_1b_write_data[3]       : AH19      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[16]   : AH20      : input  : 2.5 V             :         : 4A        : N              
+cache_L1d_memory_address[9]  : AH21      : input  : 2.5 V             :         : 4A        : N              
+clk                          : AH22      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AH23      : power  :                   : 2.5V    : 4A        :                
+cache_L1c_memory_address[6]  : AH24      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[109]  : AH25      : input  : 2.5 V             :         : 4A        : N              
+cache_1a_write_data[8]       : AH26      : input  : 2.5 V             :         : 4A        : N              
+cache_L1d_memory_address[11] : AH27      : input  : 2.5 V             :         : 5A        : N              
+GND                          : AH28      : gnd    :                   :         :           :                
+main_memory_address[18]      : AH29      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[11]   : AH30      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[119]  : AJ1       : input  : 2.5 V             :         : 3B        : N              
+cache_1d_write_data[13]      : AJ2       : input  : 2.5 V             :         : 3B        : N              
+cache_c_read_request         : AJ3       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ4       :        :                   :         : 3B        :                
+main_memory_write_data[64]   : AJ5       : input  : 2.5 V             :         : 3B        : N              
+GND                          : AJ6       : gnd    :                   :         :           :                
+main_memory_write_data[26]   : AJ7       : input  : 2.5 V             :         : 3B        : N              
+cache_1c_write_data[17]      : AJ8       : input  : 2.5 V             :         : 3B        : N              
+cache_L1d_memory_address[26] : AJ9       : input  : 2.5 V             :         : 3B        : N              
+main_memory_write_data[34]   : AJ10      : input  : 2.5 V             :         : 3B        : N              
+GND                          : AJ11      : gnd    :                   :         :           :                
+main_memory_write_data[114]  : AJ12      : input  : 2.5 V             :         : 3B        : N              
+VREFB3BN0                    : AJ13      : power  :                   :         : 3B        :                
+main_memory_write_data[18]   : AJ14      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ15      :        :                   :         : 4A        :                
+VCCIO4A                      : AJ16      : power  :                   : 2.5V    : 4A        :                
+cache_L1d_memory_address[3]  : AJ17      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[58]   : AJ18      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[0]  : AJ19      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[126]  : AJ20      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AJ21      : gnd    :                   :         :           :                
+cache_L1b_memory_address[25] : AJ22      : input  : 2.5 V             :         : 4A        : N              
+cache_L1d_memory_address[2]  : AJ23      : input  : 2.5 V             :         : 4A        : N              
+cache_L1b_memory_address[14] : AJ24      : input  : 2.5 V             :         : 4A        : N              
+cache_1b_write_data[26]      : AJ25      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AJ26      : power  :                   : 2.5V    : 4A        :                
+main_memory_address[10]      : AJ27      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[21] : AJ28      : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[12]   : AJ29      : input  : 2.5 V             :         : 5B        : N              
+main_memory_address[15]      : AJ30      : input  : 2.5 V             :         : 5B        : N              
+GND                          : AK2       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 3B        :                
+VCCIO3B                      : AK4       : power  :                   : 2.5V    : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK5       :        :                   :         : 3B        :                
+main_memory_write_data[94]   : AK6       : input  : 2.5 V             :         : 3B        : N              
+cache_1d_write_data[15]      : AK7       : input  : 2.5 V             :         : 3B        : N              
+cache_1c_write_data[25]      : AK8       : input  : 2.5 V             :         : 3B        : N              
+VCCIO3B                      : AK9       : power  :                   : 2.5V    : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK10      :        :                   :         : 3B        :                
+main_memory_write_data[5]    : AK11      : input  : 2.5 V             :         : 3B        : N              
+main_memory_address[8]       : AK12      : input  : 2.5 V             :         : 3B        : N              
+cache_L1d_memory_address[17] : AK13      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AK14      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK15      :        :                   :         : 4A        :                
+cache_L1b_memory_address[4]  : AK16      : input  : 2.5 V             :         : 4A        : N              
+main_memory_write_data[4]    : AK17      : input  : 2.5 V             :         : 4A        : N              
+cache_1c_write_data[18]      : AK18      : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : AK19      : power  :                   : 2.5V    : 4A        :                
+cache_L1c_memory_address[24] : AK20      : input  : 2.5 V             :         : 4A        : N              
+cache_L1c_memory_address[9]  : AK21      : input  : 2.5 V             :         : 4A        : N              
+cache_L1b_memory_address[5]  : AK22      : input  : 2.5 V             :         : 4A        : N              
+main_memory_address[6]       : AK23      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AK24      : gnd    :                   :         :           :                
+cache_1d_write_data[19]      : AK25      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK26      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4A        :                
+cache_L1c_memory_address[2]  : AK28      : input  : 2.5 V             :         : 4A        : N              
+GND                          : AK29      : gnd    :                   :         :           :                
+GND                          : B1        : gnd    :                   :         :           :                
+GND                          : B2        : gnd    :                   :         :           :                
+DNU                          : B3        :        :                   :         :           :                
+DNU                          : B4        :        :                   :         :           :                
+VCCIO8A                      : B5        : power  :                   : 2.5V    : 8A        :                
+cache_1b_write_data[12]      : B6        : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[25]   : B7        : input  : 2.5 V             :         : 8A        : N              
+cache_1b_write_data[24]      : B8        : input  : 2.5 V             :         : 8A        : N              
+VREFB8AN0                    : B9        : power  :                   :         : 8A        :                
+GND                          : B10       : gnd    :                   :         :           :                
+main_memory_write_data[125]  : B11       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[33]   : B12       : input  : 2.5 V             :         : 7A        : N              
+cache_L1a_memory_address[3]  : B13       : input  : 2.5 V             :         : 7A        : N              
+main_memory_address[9]       : B14       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : B15       : power  :                   : 2.5V    : 7A        :                
+VREFB7AN0                    : B16       : power  :                   :         : 7A        :                
+cache_1b_write_data[15]      : B17       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B18       :        :                   :         : 7A        :                
+cache_L1d_memory_address[31] : B19       : input  : 2.5 V             :         : 7A        : N              
+GND                          : B20       : gnd    :                   :         :           :                
+main_memory_address[14]      : B21       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[35]   : B22       : input  : 2.5 V             :         : 7A        : N              
+cache_1b_write_data[5]       : B23       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[55]   : B24       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : B25       : power  :                   : 2.5V    : 7A        :                
+cache_1b_write_data[4]       : B26       : input  : 2.5 V             :         : 7A        : N              
+cache_1a_write_data[28]      : B27       : input  : 2.5 V             :         : 7A        : N              
+cache_1d_write_data[30]      : B28       : input  : 2.5 V             :         : 6A        : N              
+main_memory_address[2]       : B29       : input  : 2.5 V             :         : 6A        : N              
+GND                          : B30       : gnd    :                   :         :           :                
+GND                          : C1        :        :                   :         :           :                
+GND                          : C2        : gnd    :                   :         :           :                
+GND                          : C3        : gnd    :                   :         :           :                
+GND                          : C4        : gnd    :                   :         :           :                
+nCONFIG                      : C5        :        :                   :         : 9A        :                
+cache_L1a_memory_address[22] : C6        : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[19] : C7        : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : C8        : power  :                   : 2.5V    : 8A        :                
+cache_L1c_memory_address[28] : C9        : input  : 2.5 V             :         : 8A        : N              
+cache_1d_write_data[16]      : C10       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[82]   : C11       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[49]   : C12       : input  : 2.5 V             :         : 7A        : N              
+GND                          : C13       : gnd    :                   :         :           :                
+cache_L1a_memory_address[9]  : C14       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[43]   : C15       : input  : 2.5 V             :         : 7A        : N              
+cache_L1a_memory_address[14] : C16       : input  : 2.5 V             :         : 7A        : N              
+cache_1c_write_data[5]       : C17       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : C18       : power  :                   : 2.5V    : 7A        :                
+cache_b_read_request         : C19       : input  : 2.5 V             :         : 7A        : N              
+cache_1d_write_data[23]      : C20       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[70]   : C21       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[29] : C22       : input  : 2.5 V             :         : 7A        : N              
+GND                          : C23       : gnd    :                   :         :           :                
+cache_L1c_memory_address[8]  : C24       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[10] : C25       : input  : 2.5 V             :         : 7A        : N              
+cache_L1d_memory_address[5]  : C26       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[11] : C27       : input  : 2.5 V             :         : 7A        : N              
+VCCIO6A                      : C28       : power  :                   : 2.5V    : 6A        :                
+main_memory_write_data[19]   : C29       : input  : 2.5 V             :         : 6A        : N              
+cache_1a_write_data[25]      : C30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : D1        : gnd    :                   :         :           :                
+GND                          : D2        : gnd    :                   :         :           :                
+NC                           : D3        :        :                   :         :           :                
+NC                           : D4        :        :                   :         :           :                
+GND                          : D5        : gnd    :                   :         :           :                
+cache_L1b_memory_address[3]  : D6        : input  : 2.5 V             :         : 8A        : N              
+main_memory_address[26]      : D7        : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[17] : D8        : input  : 2.5 V             :         : 8A        : N              
+cache_1b_write_data[25]      : D9        : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[22] : D10       : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : D11       : power  :                   : 2.5V    : 8A        :                
+main_memory_address[28]      : D12       : input  : 2.5 V             :         : 7A        : N              
+cache_L1d_memory_address[18] : D13       : input  : 2.5 V             :         : 8A        : N              
+cache_1a_write_data[1]       : D14       : input  : 2.5 V             :         : 7A        : N              
+DNU                          : D15       :        :                   :         :           :                
+GND                          : D16       : gnd    :                   :         :           :                
+cache_1c_write_data[1]       : D17       : input  : 2.5 V             :         : 7A        : N              
+cache_1d_write_data[12]      : D18       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7A        :                
+cache_1c_write_data[11]      : D20       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : D21       : power  :                   : 2.5V    : 7A        :                
+main_memory_write_data[21]   : D22       : input  : 2.5 V             :         : 7A        : N              
+cache_L1c_memory_address[20] : D23       : input  : 2.5 V             :         : 7A        : N              
+VCCPD7A8A                    : D24       : power  :                   : 2.5V    : 7A, 8A    :                
+main_memory_write_data[105]  : D25       : input  : 2.5 V             :         : 7A        : N              
+GND                          : D26       : gnd    :                   :         :           :                
+cache_1a_write_data[19]      : D27       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[5]       : D28       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[27]      : D29       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[32]   : D30       : input  : 2.5 V             :         : 6A        : N              
+NC                           : E1        :        :                   :         :           :                
+NC                           : E2        :        :                   :         :           :                
+GND                          : E3        : gnd    :                   :         :           :                
+GND                          : E4        : gnd    :                   :         :           :                
+GND                          : E5        :        :                   :         : 9A        :                
+main_memory_write_data[100]  : E6        : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[23] : E7        : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[85]   : E8        : input  : 2.5 V             :         : 8A        : N              
+GND                          : E9        : gnd    :                   :         :           :                
+main_memory_write_data[60]   : E10       : input  : 2.5 V             :         : 8A        : N              
+cache_1d_write_data[1]       : E11       : input  : 2.5 V             :         : 8A        : N              
+cache_L1b_memory_address[28] : E12       : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[31] : E13       : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : E14       : power  :                   : 2.5V    : 8A        :                
+cache_L1c_memory_address[3]  : E15       : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[13] : E16       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[73]   : E17       : input  : 2.5 V             :         : 7A        : N              
+cache_L1d_memory_address[25] : E18       : input  : 2.5 V             :         : 7A        : N              
+GND                          : E19       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 7A        :                
+cache_L1a_memory_address[1]  : E21       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[90]   : E22       : input  : 2.5 V             :         : 7A        : N              
+cache_L1a_memory_address[15] : E23       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : E24       : power  :                   : 2.5V    : 7A        :                
+main_memory_write_data[44]   : E25       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[97]   : E26       : input  : 2.5 V             :         : 7A        : N              
+cache_L1d_memory_address[24] : E27       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[29]      : E28       : input  : 2.5 V             :         : 6A        : N              
+GND                          : E29       : gnd    :                   :         :           :                
+cache_L1d_memory_address[21] : E30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : F1        : gnd    :                   :         :           :                
+GND                          : F2        : gnd    :                   :         :           :                
+NC                           : F3        :        :                   :         :           :                
+NC                           : F4        :        :                   :         :           :                
+GND                          : F5        : gnd    :                   :         :           :                
+cache_L1b_memory_address[20] : F6        : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : F7        : power  :                   : 2.5V    : 8A        :                
+cache_L1a_memory_address[6]  : F8        : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[7]  : F9        : input  : 2.5 V             :         : 8A        : N              
+VCCPGM                       : F10       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+VCCPD7A8A                    : F11       : power  :                   : 2.5V    : 7A, 8A    :                
+GND                          : F12       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 8A        :                
+main_memory_write_data[24]   : F14       : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[0]  : F15       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[15]   : F16       : input  : 2.5 V             :         : 8A        : N              
+VCCIO7A                      : F17       : power  :                   : 2.5V    : 7A        :                
+main_memory_write_data[6]    : F18       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 7A        :                
+cache_1d_write_data[0]       : F20       : input  : 2.5 V             :         : 7A        : N              
+VCCPD7A8A                    : F21       : power  :                   : 2.5V    : 7A, 8A    :                
+GND                          : F22       : gnd    :                   :         :           :                
+VCCPD7A8A                    : F23       : power  :                   : 2.5V    : 7A, 8A    :                
+DNU                          : F24       :        :                   :         :           :                
+main_memory_write_data[99]   : F25       : input  : 2.5 V             :         : 6A        : N              
+cache_L1b_memory_address[21] : F26       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : F27       : power  :                   : 2.5V    : 6A        :                
+main_memory_address[19]      : F28       : input  : 2.5 V             :         : 6A        : N              
+cache_L1c_memory_address[10] : F29       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[51]   : F30       : input  : 2.5 V             :         : 6A        : N              
+NC                           : G1        :        :                   :         :           :                
+NC                           : G2        :        :                   :         :           :                
+GND                          : G3        : gnd    :                   :         :           :                
+GND                          : G4        : gnd    :                   :         :           :                
+MSEL2                        : G5        :        :                   :         : 9A        :                
+cache_1b_write_data[11]      : G6        : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[23] : G7        : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[16] : G8        : input  : 2.5 V             :         : 8A        : N              
+cache_1d_write_data[4]       : G9        : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : G10       : power  :                   : 2.5V    : 8A        :                
+VCC_AUX                      : G11       : power  :                   : 2.5V    :           :                
+main_memory_address[31]      : G12       : input  : 2.5 V             :         : 8A        : N              
+VCCPD7A8A                    : G13       : power  :                   : 2.5V    : 7A, 8A    :                
+cache_L1b_memory_address[6]  : G14       : input  : 2.5 V             :         : 8A        : N              
+GND                          : G15       : gnd    :                   :         :           :                
+VCCPD7A8A                    : G16       : power  :                   : 2.5V    : 7A, 8A    :                
+cache_1c_write_data[4]       : G17       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[67]   : G18       : input  : 2.5 V             :         : 7A        : N              
+VCCPD7A8A                    : G19       : power  :                   : 2.5V    : 7A, 8A    :                
+VCCIO7A                      : G20       : power  :                   : 2.5V    : 7A        :                
+main_memory_write_data[112]  : G21       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[3]    : G22       : input  : 2.5 V             :         : 7A        : N              
+cache_1b_write_data[0]       : G23       : input  : 2.5 V             :         : 7A        : N              
+GND                          : G24       :        :                   :         : 7A        :                
+GND                          : G25       : gnd    :                   :         :           :                
+main_memory_write_data[118]  : G26       : input  : 2.5 V             :         : 6A        : N              
+cache_1b_write_data[30]      : G27       : input  : 2.5 V             :         : 6A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G28       :        :                   :         : 6A        :                
+main_memory_write_data[65]   : G29       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : G30       : power  :                   : 2.5V    : 6A        :                
+GND                          : H1        : gnd    :                   :         :           :                
+GND                          : H2        : gnd    :                   :         :           :                
+NC                           : H3        :        :                   :         :           :                
+NC                           : H4        :        :                   :         :           :                
+GND                          : H5        : gnd    :                   :         :           :                
+nCE                          : H6        :        :                   :         : 9A        :                
+cache_L1b_memory_address[31] : H7        : input  : 2.5 V             :         : 8A        : N              
+GND                          : H8        : gnd    :                   :         :           :                
+main_memory_write_data[29]   : H9        : input  : 2.5 V             :         : 8A        : N              
+VCCBAT                       : H10       : power  :                   : 1.2V    :           :                
+GND                          : H11       : gnd    :                   :         :           :                
+cache_L1b_memory_address[9]  : H12       : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : H13       : power  :                   : 2.5V    : 8A        :                
+cache_1d_write_data[6]       : H14       : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[8]  : H15       : input  : 2.5 V             :         : 8A        : N              
+VCC_AUX                      : H16       : power  :                   : 2.5V    :           :                
+main_memory_write_data[69]   : H17       : input  : 2.5 V             :         : 7A        : N              
+GND                          : H18       : gnd    :                   :         :           :                
+main_memory_address[17]      : H19       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 7A        :                
+main_memory_address[21]      : H21       : input  : 2.5 V             :         : 7A        : N              
+VCC_AUX                      : H22       : power  :                   : 2.5V    :           :                
+VCCIO7A                      : H23       : power  :                   : 2.5V    : 7A        :                
+cache_d_write_request        : H24       : input  : 2.5 V             :         : 6A        : N              
+cache_1a_write_data[31]      : H25       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[14]      : H26       : input  : 2.5 V             :         : 6A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H27       :        :                   :         : 6A        :                
+GND                          : H28       : gnd    :                   :         :           :                
+cache_L1b_memory_address[26] : H29       : input  : 2.5 V             :         : 6A        : N              
+main_memory_address[16]      : H30       : input  : 2.5 V             :         : 6A        : N              
+NC                           : J1        :        :                   :         :           :                
+NC                           : J2        :        :                   :         :           :                
+GND                          : J3        : gnd    :                   :         :           :                
+GND                          : J4        : gnd    :                   :         :           :                
+VCC                          : J5        : power  :                   : 1.1V    :           :                
+GND                          : J6        : gnd    :                   :         :           :                
+main_memory_write_data[117]  : J7        : input  : 2.5 V             :         : 8A        : N              
+VCCA_FPLL                    : J8        : power  :                   : 2.5V    :           :                
+main_memory_write_data[89]   : J9        : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[30] : J10       : input  : 2.5 V             :         : 8A        : N              
+GND                          : J11       : gnd    :                   :         :           :                
+main_memory_write_data[123]  : J12       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[74]   : J13       : input  : 2.5 V             :         : 8A        : N              
+cache_L1d_memory_address[10] : J14       : input  : 2.5 V             :         : 8A        : N              
+cache_L1b_memory_address[0]  : J15       : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : J16       : power  :                   : 2.5V    : 8A        :                
+main_memory_write_data[83]   : J17       : input  : 2.5 V             :         : 7A        : N              
+cache_L1b_memory_address[12] : J18       : input  : 2.5 V             :         : 7A        : N              
+cache_1d_write_data[20]      : J19       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[7]    : J20       : input  : 2.5 V             :         : 7A        : N              
+GND                          : J21       : gnd    :                   :         :           :                
+cache_1b_write_data[21]      : J22       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[63]   : J23       : input  : 2.5 V             :         : 6A        : N              
+VCCA_FPLL                    : J24       : power  :                   : 2.5V    :           :                
+cache_L1a_memory_address[13] : J25       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : J26       : power  :                   : 2.5V    : 6A        :                
+cache_1c_write_data[12]      : J27       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[57]   : J28       : input  : 2.5 V             :         : 6A        : N              
+cache_L1a_memory_address[20] : J29       : input  : 2.5 V             :         : 6A        : N              
+cache_1b_write_data[13]      : J30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : K1        : gnd    :                   :         :           :                
+GND                          : K2        : gnd    :                   :         :           :                
+DNU                          : K3        :        :                   :         :           :                
+DNU                          : K4        :        :                   :         :           :                
+GND                          : K5        : gnd    :                   :         :           :                
+VCCA_FPLL                    : K6        : power  :                   : 2.5V    :           :                
+nSTATUS                      : K7        :        :                   :         : 9A        :                
+NC                           : K8        :        :                   :         :           :                
+GND                          : K9        : gnd    :                   :         :           :                
+main_memory_write_data[107]  : K10       : input  : 2.5 V             :         : 8A        : N              
+cache_1a_write_data[20]      : K11       : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[4]  : K12       : input  : 2.5 V             :         : 8A        : N              
+cache_1a_write_data[26]      : K13       : input  : 2.5 V             :         : 8A        : N              
+GND                          : K14       : gnd    :                   :         :           :                
+cache_1a_write_data[29]      : K15       : input  : 2.5 V             :         : 8A        : N              
+cache_L1a_memory_address[24] : K16       : input  : 2.5 V             :         : 7A        : N              
+cache_L1a_memory_address[21] : K17       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[30]   : K18       : input  : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : K19       : power  :                   : 2.5V    : 7A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K20       :        :                   :         : 7A        :                
+main_memory_write_data[41]   : K21       : input  : 2.5 V             :         : 6A        : N              
+cache_L1c_memory_address[7]  : K22       : input  : 2.5 V             :         : 6A        : N              
+VCCPD6A                      : K23       : power  :                   : 2.5V    : 6A        :                
+GND                          : K24       : gnd    :                   :         :           :                
+cache_1c_write_data[28]      : K25       : input  : 2.5 V             :         : 6A        : N              
+cache_1c_write_data[9]       : K26       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[110]  : K27       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[13]   : K28       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : K29       : power  :                   : 2.5V    : 6A        :                
+main_memory_write_data[27]   : K30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : L1        : gnd    :                   :         :           :                
+GND                          : L2        : gnd    :                   :         :           :                
+GND                          : L3        : gnd    :                   :         :           :                
+GND                          : L4        : gnd    :                   :         :           :                
+VCC                          : L5        : power  :                   : 1.1V    :           :                
+GND                          : L6        : gnd    :                   :         :           :                
+NC                           : L7        :        :                   :         :           :                
+CONF_DONE                    : L8        :        :                   :         : 9A        :                
+main_memory_write_data[9]    : L9        : input  : 2.5 V             :         : 8A        : N              
+cache_1c_write_data[31]      : L10       : input  : 2.5 V             :         : 8A        : N              
+cache_1a_write_data[23]      : L11       : input  : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : L12       : power  :                   : 2.5V    : 8A        :                
+main_memory_write_data[86]   : L13       : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[25] : L14       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[79]   : L15       : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[45]   : L16       : input  : 2.5 V             :         : 7A        : N              
+GND                          : L17       : gnd    :                   :         :           :                
+main_memory_address[5]       : L18       : input  : 2.5 V             :         : 7A        : N              
+cache_1a_write_data[12]      : L19       : input  : 2.5 V             :         : 7A        : N              
+main_memory_write_data[22]   : L20       : input  : 2.5 V             :         : 7A        : N              
+cache_1a_write_data[27]      : L21       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : L22       : power  :                   : 2.5V    : 6A        :                
+main_memory_address[24]      : L23       : input  : 2.5 V             :         : 6A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L24       :        :                   :         : 6A        :                
+cache_L1c_memory_address[11] : L25       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[61]   : L26       : input  : 2.5 V             :         : 6A        : N              
+GND                          : L27       : gnd    :                   :         :           :                
+cache_1a_write_data[24]      : L28       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[62]   : L29       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[31]      : L30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : M1        : gnd    :                   :         :           :                
+GND                          : M2        : gnd    :                   :         :           :                
+DNU                          : M3        :        :                   :         :           :                
+DNU                          : M4        :        :                   :         :           :                
+GND                          : M5        : gnd    :                   :         :           :                
+VCC                          : M6        : power  :                   : 1.1V    :           :                
+MSEL4                        : M7        :        :                   :         : 9A        :                
+main_memory_write_data[56]   : M8        : input  : 2.5 V             :         : 8A        : N              
+cache_L1c_memory_address[13] : M9        : input  : 2.5 V             :         : 8A        : N              
+GND                          : M10       : gnd    :                   :         :           :                
+main_memory_address[23]      : M11       : input  : 2.5 V             :         : 8A        : N              
+cache_1b_write_data[16]      : M12       : input  : 2.5 V             :         : 8A        : N              
+VCC                          : M13       : power  :                   : 1.1V    :           :                
+GND                          : M14       : gnd    :                   :         :           :                
+VCC                          : M15       : power  :                   : 1.1V    :           :                
+GND                          : M16       : gnd    :                   :         :           :                
+VCC                          : M17       : power  :                   : 1.1V    :           :                
+GND                          : M18       : gnd    :                   :         :           :                
+VCC                          : M19       : power  :                   : 1.1V    :           :                
+GND                          : M20       : gnd    :                   :         :           :                
+cache_a_read_request         : M21       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[80]   : M22       : input  : 2.5 V             :         : 6A        : N              
+main_memory_address[7]       : M23       : input  : 2.5 V             :         : 6A        : N              
+VCCPD6A                      : M24       : power  :                   : 2.5V    : 6A        :                
+VCCIO6A                      : M25       : power  :                   : 2.5V    : 6A        :                
+VREFB6AN0                    : M26       : power  :                   :         : 6A        :                
+cache_L1b_memory_address[27] : M27       : input  : 2.5 V             :         : 6A        : N              
+cache_L1b_memory_address[13] : M28       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[24]      : M29       : input  : 2.5 V             :         : 6A        : N              
+GND                          : M30       : gnd    :                   :         :           :                
+GND                          : N1        : gnd    :                   :         :           :                
+GND                          : N2        : gnd    :                   :         :           :                
+GND                          : N3        : gnd    :                   :         :           :                
+GND                          : N4        : gnd    :                   :         :           :                
+VCC                          : N5        : power  :                   : 1.1V    :           :                
+GND                          : N6        : gnd    :                   :         :           :                
+GND                          : N7        : gnd    :                   :         :           :                
+GND                          : N8        : gnd    :                   :         :           :                
+cache_1d_write_data[22]      : N9        : input  : 2.5 V             :         : 8A        : N              
+main_memory_write_data[48]   : N10       : input  : 2.5 V             :         : 8A        : N              
+cache_1a_write_data[2]       : N11       : input  : 2.5 V             :         : 8A        : N              
+main_memory_address[0]       : N12       : input  : 2.5 V             :         : 8A        : N              
+GND                          : N13       : gnd    :                   :         :           :                
+VCC                          : N14       : power  :                   : 1.1V    :           :                
+GND                          : N15       : gnd    :                   :         :           :                
+VCC                          : N16       : power  :                   : 1.1V    :           :                
+GND                          : N17       : gnd    :                   :         :           :                
+VCC                          : N18       : power  :                   : 1.1V    :           :                
+GND                          : N19       : gnd    :                   :         :           :                
+cache_1a_write_data[17]      : N20       : input  : 2.5 V             :         : 6A        : N              
+cache_L1d_memory_address[14] : N21       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[92]   : N22       : input  : 2.5 V             :         : 6A        : N              
+GND                          : N23       : gnd    :                   :         :           :                
+main_memory_write_data[81]   : N24       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[23]   : N25       : input  : 2.5 V             :         : 6A        : N              
+main_memory_write_data[38]   : N26       : input  : 2.5 V             :         : 6A        : N              
+cache_L1a_memory_address[27] : N27       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : N28       : power  :                   : 2.5V    : 6A        :                
+cache_L1d_memory_address[19] : N29       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[8]       : N30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : P1        : gnd    :                   :         :           :                
+GND                          : P2        : gnd    :                   :         :           :                
+DNU                          : P3        :        :                   :         :           :                
+DNU                          : P4        :        :                   :         :           :                
+GND                          : P5        : gnd    :                   :         :           :                
+VCCA_FPLL                    : P6        : power  :                   : 2.5V    :           :                
+MSEL3                        : P7        :        :                   :         : 9A        :                
+GND                          : P8        : gnd    :                   :         :           :                
+MSEL1                        : P9        :        :                   :         : 9A        :                
+cache_1a_write_data[22]      : P10       : input  : 2.5 V             :         : 8A        : N              
+GND                          : P11       : gnd    :                   :         :           :                
+main_memory_write_data[14]   : P12       : input  : 2.5 V             :         : 8A        : N              
+VCC                          : P13       : power  :                   : 1.1V    :           :                
+GND                          : P14       : gnd    :                   :         :           :                
+VCC                          : P15       : power  :                   : 1.1V    :           :                
+GND                          : P16       : gnd    :                   :         :           :                
+VCC                          : P17       : power  :                   : 1.1V    :           :                
+GND                          : P18       : gnd    :                   :         :           :                
+VCC                          : P19       : power  :                   : 1.1V    :           :                
+main_memory_write_data[37]   : P20       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : P21       : power  :                   : 2.5V    : 6A        :                
+main_memory_write_data[28]   : P22       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[3]       : P23       : input  : 2.5 V             :         : 6A        : N              
+VCCPD6A                      : P24       : power  :                   : 2.5V    : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P25       :        :                   :         : 6A        :                
+GND                          : P26       : gnd    :                   :         :           :                
+VREFB5BN0                    : P27       : power  :                   :         : 5B        :                
+main_memory_write_data[1]    : P28       : input  : 2.5 V             :         : 6A        : N              
+cache_L1a_memory_address[10] : P29       : input  : 2.5 V             :         : 6A        : N              
+cache_1b_write_data[23]      : P30       : input  : 2.5 V             :         : 6A        : N              
+GND                          : R1        : gnd    :                   :         :           :                
+GND                          : R2        : gnd    :                   :         :           :                
+GND                          : R3        : gnd    :                   :         :           :                
+GND                          : R4        : gnd    :                   :         :           :                
+VCC                          : R5        : power  :                   : 1.1V    :           :                
+GND                          : R6        : gnd    :                   :         :           :                
+GND                          : R7        : gnd    :                   :         :           :                
+GND                          : R8        : gnd    :                   :         :           :                
+GND                          : R9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 3A        :                
+main_memory_write_data[84]   : R11       : input  : 2.5 V             :         : 8A        : N              
+cache_L1b_memory_address[16] : R12       : input  : 2.5 V             :         : 8A        : N              
+GND                          : R13       : gnd    :                   :         :           :                
+VCC                          : R14       : power  :                   : 1.1V    :           :                
+GND                          : R15       : gnd    :                   :         :           :                
+VCC                          : R16       : power  :                   : 1.1V    :           :                
+GND                          : R17       : gnd    :                   :         :           :                
+VCC                          : R18       : power  :                   : 1.1V    :           :                
+GND                          : R19       : gnd    :                   :         :           :                
+cache_L1b_memory_address[15] : R20       : input  : 2.5 V             :         : 6A        : N              
+cache_1d_write_data[9]       : R21       : input  : 2.5 V             :         : 6A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R22       :        :                   :         : 6A        :                
+cache_L1b_memory_address[18] : R23       : input  : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : R24       : power  :                   : 2.5V    : 6A        :                
+main_memory_address[30]      : R25       : input  : 2.5 V             :         : 6A        : N              
+cache_L1a_memory_address[12] : R26       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[127]  : R27       : input  : 2.5 V             :         : 6A        : N              
+cache_1c_write_data[6]       : R28       : input  : 2.5 V             :         : 6A        : N              
+GND                          : R29       : gnd    :                   :         :           :                
+cache_1d_write_data[26]      : R30       : input  : 2.5 V             :         : 5B        : N              
+GND                          : T1        : gnd    :                   :         :           :                
+GND                          : T2        : gnd    :                   :         :           :                
+DNU                          : T3        :        :                   :         :           :                
+DNU                          : T4        :        :                   :         :           :                
+GND                          : T5        : gnd    :                   :         :           :                
+VCC                          : T6        : power  :                   : 1.1V    :           :                
+DCLK                         : T7        :        :                   :         : 3A        :                
+MSEL0                        : T8        :        :                   :         : 9A        :                
+main_memory_write_data[113]  : T9        : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 3A        :                
+GND                          : T12       : gnd    :                   :         :           :                
+VCC                          : T13       : power  :                   : 1.1V    :           :                
+GND                          : T14       : gnd    :                   :         :           :                
+VCC                          : T15       : power  :                   : 1.1V    :           :                
+GND                          : T16       : gnd    :                   :         :           :                
+VCC                          : T17       : power  :                   : 1.1V    :           :                
+GND                          : T18       : gnd    :                   :         :           :                
+VCC                          : T19       : power  :                   : 1.1V    :           :                
+GND                          : T20       : gnd    :                   :         :           :                
+main_memory_write_data[72]   : T21       : input  : 2.5 V             :         : 6A        : N              
+GND                          : T22       : gnd    :                   :         :           :                
+cache_1a_write_data[3]       : T23       : input  : 2.5 V             :         : 6A        : N              
+cache_1a_write_data[21]      : T24       : input  : 2.5 V             :         : 5B        : N              
+cache_L1c_memory_address[27] : T25       : input  : 2.5 V             :         : 5B        : N              
+VCCPD5B                      : T26       : power  :                   : 2.5V    : 5B        :                
+VCCIO5B                      : T27       : power  :                   : 2.5V    : 5B        :                
+cache_1c_write_data[29]      : T28       : input  : 2.5 V             :         : 5B        : N              
+cache_1b_write_data[2]       : T29       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[111]  : T30       : input  : 2.5 V             :         : 5B        : N              
+GND                          : U1        : gnd    :                   :         :           :                
+GND                          : U2        : gnd    :                   :         :           :                
+GND                          : U3        : gnd    :                   :         :           :                
+GND                          : U4        : gnd    :                   :         :           :                
+VCC                          : U5        : power  :                   : 1.1V    :           :                
+GND                          : U6        : gnd    :                   :         :           :                
+TDI                          : U7        : input  :                   :         : 3A        :                
+main_memory_address[22]      : U8        : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U9        :        :                   :         : 3A        :                
+VCCIO3A                      : U10       : power  :                   : 2.5V    : 3A        :                
+reset                        : U11       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 3A        :                
+GND                          : U13       : gnd    :                   :         :           :                
+VCC                          : U14       : power  :                   : 1.1V    :           :                
+GND                          : U15       : gnd    :                   :         :           :                
+VCC                          : U16       : power  :                   : 1.1V    :           :                
+GND                          : U17       : gnd    :                   :         :           :                
+VCC                          : U18       : power  :                   : 1.1V    :           :                
+GND                          : U19       : gnd    :                   :         :           :                
+VCC                          : U20       : power  :                   : 1.1V    :           :                
+cache_c_write_request        : U21       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[54]   : U22       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[0]    : U23       : input  : 2.5 V             :         : 5B        : N              
+VCCPD5B                      : U24       : power  :                   : 2.5V    : 5B        :                
+GND                          : U25       : gnd    :                   :         :           :                
+cache_1d_write_data[11]      : U26       : input  : 2.5 V             :         : 5B        : N              
+cache_1a_write_data[7]       : U27       : input  : 2.5 V             :         : 5B        : N              
+cache_L1b_memory_address[23] : U28       : input  : 2.5 V             :         : 5B        : N              
+cache_1b_write_data[18]      : U29       : input  : 2.5 V             :         : 5B        : N              
+VCCIO5B                      : U30       : power  :                   : 2.5V    : 5B        :                
+GND                          : V1        : gnd    :                   :         :           :                
+GND                          : V2        : gnd    :                   :         :           :                
+DNU                          : V3        :        :                   :         :           :                
+DNU                          : V4        :        :                   :         :           :                
+GND                          : V5        : gnd    :                   :         :           :                
+VCCA_FPLL                    : V6        : power  :                   : 2.5V    :           :                
+TMS                          : V7        : input  :                   :         : 3A        :                
+GND                          : V8        : gnd    :                   :         :           :                
+main_memory_write_data[17]   : V9        : input  : 2.5 V             :         : 3A        : N              
+cache_1a_write_data[15]      : V10       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 3A        :                
+cache_1b_write_data[1]       : V12       : input  : 2.5 V             :         : 3B        : N              
+VCC                          : V13       : power  :                   : 1.1V    :           :                
+GND                          : V14       : gnd    :                   :         :           :                
+VCC                          : V15       : power  :                   : 1.1V    :           :                
+GND                          : V16       : gnd    :                   :         :           :                
+VCC                          : V17       : power  :                   : 1.1V    :           :                
+GND                          : V18       : gnd    :                   :         :           :                
+VCC                          : V19       : power  :                   : 1.1V    :           :                
+GND                          : V20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 5A        :                
+cache_1b_write_data[14]      : V22       : input  : 2.5 V             :         : 5A        : N              
+GND                          : V23       : gnd    :                   :         :           :                
+cache_L1a_memory_address[19] : V24       : input  : 2.5 V             :         : 5B        : N              
+main_memory_address[27]      : V25       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[10]   : V26       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[87]   : V27       : input  : 2.5 V             :         : 5B        : N              
+GND                          : V28       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V29       :        :                   :         : 5B        :                
+cache_1a_write_data[11]      : V30       : input  : 2.5 V             :         : 5B        : N              
+GND                          : W1        : gnd    :                   :         :           :                
+GND                          : W2        : gnd    :                   :         :           :                
+GND                          : W3        : gnd    :                   :         :           :                
+GND                          : W4        : gnd    :                   :         :           :                
+VCC                          : W5        : power  :                   : 1.1V    :           :                
+GND                          : W6        : gnd    :                   :         :           :                
+GND                          : W7        : gnd    :                   :         :           :                
+GND                          : W8        : gnd    :                   :         :           :                
+TDO                          : W9        : output :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W10       :        :                   :         : 3A        :                
+GND                          : W11       : gnd    :                   :         :           :                
+main_memory_write_data[47]   : W12       : input  : 2.5 V             :         : 3B        : N              
+GND                          : W13       : gnd    :                   :         :           :                
+VCC                          : W14       : power  :                   : 1.1V    :           :                
+GND                          : W15       : gnd    :                   :         :           :                
+VCC                          : W16       : power  :                   : 1.1V    :           :                
+GND                          : W17       : gnd    :                   :         :           :                
+VCC                          : W18       : power  :                   : 1.1V    :           :                
+GND                          : W19       : gnd    :                   :         :           :                
+VCC                          : W20       : power  :                   : 1.1V    :           :                
+GND                          : W21       : gnd    :                   :         :           :                
+main_memory_write_data[50]   : W22       : input  : 2.5 V             :         : 5A        : N              
+VCCPD5A                      : W23       : power  :                   : 2.5V    : 5A        :                
+main_memory_address[3]       : W24       : input  : 2.5 V             :         : 5A        : N              
+VCCPD5A                      : W25       : power  :                   : 2.5V    : 5A        :                
+VCCIO5B                      : W26       : power  :                   : 2.5V    : 5B        :                
+main_memory_write_data[20]   : W27       : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[88]   : W28       : input  : 2.5 V             :         : 5B        : N              
+main_memory_write_data[91]   : W29       : input  : 2.5 V             :         : 5B        : N              
+cache_1c_write_data[10]      : W30       : input  : 2.5 V             :         : 5B        : N              
+GND                          : Y1        : gnd    :                   :         :           :                
+GND                          : Y2        : gnd    :                   :         :           :                
+DNU                          : Y3        :        :                   :         :           :                
+DNU                          : Y4        :        :                   :         :           :                
+GND                          : Y5        : gnd    :                   :         :           :                
+VCC                          : Y6        : power  :                   : 1.1V    :           :                
+GND                          : Y7        : gnd    :                   :         :           :                
+VCCA_FPLL                    : Y8        : power  :                   : 2.5V    :           :                
+VCCIO3A                      : Y9        : power  :                   : 2.5V    : 3A        :                
+main_memory_write_data[121]  : Y10       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y11       :        :                   :         : 3A        :                
+main_memory_address[4]       : Y12       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 3B        :                
+GND                          : Y14       : gnd    :                   :         :           :                
+cache_1a_write_data[13]      : Y15       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4A        :                
+main_memory_write_request    : Y17       : input  : 2.5 V             :         : 4A        : N              
+cache_L1d_memory_address[30] : Y18       : input  : 2.5 V             :         : 4A        : N              
+VCCIO4A                      : Y19       : power  :                   : 2.5V    : 4A        :                
+main_memory_write_data[46]   : Y20       : input  : 2.5 V             :         : 4A        : N              
+cache_1c_write_data[3]       : Y21       : input  : 2.5 V             :         : 5A        : N              
+cache_1b_write_data[9]       : Y22       : input  : 2.5 V             :         : 5A        : N              
+cache_L1b_memory_address[17] : Y23       : input  : 2.5 V             :         : 5A        : N              
+GND                          : Y24       : gnd    :                   :         :           :                
+main_memory_write_data[75]   : Y25       : input  : 2.5 V             :         : 5A        : N              
+main_memory_write_data[40]   : Y26       : input  : 2.5 V             :         : 5A        : N              
+cache_1c_write_data[30]      : Y27       : input  : 2.5 V             :         : 5A        : N              
+cache_L1a_memory_address[5]  : Y28       : input  : 2.5 V             :         : 5B        : N              
+VCCIO5B                      : Y29       : power  :                   : 2.5V    : 5B        :                
+cache_1d_write_data[10]      : Y30       : input  : 2.5 V             :         : 5B        : N              

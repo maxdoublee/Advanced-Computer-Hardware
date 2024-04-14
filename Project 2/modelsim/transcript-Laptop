@@ -1,0 +1,44 @@
+# Compile of adder_unit.sv was successful with warnings.
+# Compile of dispatch_unit.sv was successful.
+# Compile of instruction_decoder.sv was successful.
+# Compile of instruction_queue.sv was successful.
+# Compile of memory_unit.sv failed with 2 errors.
+# Compile of multiplier_unit.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of testbench.sv was successful with warnings.
+# Compile of topmodule.sv was successful.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of adder_unit.sv was successful.
+# Compile of dispatch_unit.sv was successful.
+# Compile of instruction_decoder.sv was successful.
+# Compile of instruction_queue.sv was successful.
+# Compile of memory_unit.sv failed with 2 errors.
+# Compile of multiplier_unit.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of testbench.sv was successful with warnings.
+# Compile of topmodule.sv was successful.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of adder_unit.sv was successful.
+# Compile of dispatch_unit.sv was successful.
+# Compile of instruction_decoder.sv was successful.
+# Compile of instruction_queue.sv was successful.
+# Compile of memory_unit.sv was successful.
+# Compile of multiplier_unit.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of testbench.sv was successful with warnings.
+# Compile of topmodule.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 16:14:02 on Apr 11,2024
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.instruction_queue
+# Loading work.instruction_decoder
+# Loading work.register_file
+# Loading work.memory_unit
+# Loading work.dispatch_unit
+# Loading work.adder_unit
+# Loading work.multiplier_unit
+# End time: 19:35:47 on Apr 11,2024, Elapsed time: 3:21:45
+# Errors: 0, Warnings: 4

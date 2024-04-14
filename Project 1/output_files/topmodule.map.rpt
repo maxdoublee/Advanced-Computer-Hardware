@@ -1,0 +1,1088 @@
+Analysis & Synthesis report for topmodule
+Thu Mar 21 12:17:30 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: cache_fsm_L1a:top_cache_fsm_L1a
+ 10. Parameter Settings for User Entity Instance: cache_fsm_L1b:top_cache_fsm_L1b
+ 11. Parameter Settings for User Entity Instance: cache_fsm_L1c:top_cache_fsm_L1c
+ 12. Parameter Settings for User Entity Instance: cache_fsm_L1d:top_cache_fsm_L1d
+ 13. Parameter Settings for User Entity Instance: cache_fsm_L2a:top_cache_fsm_L2a
+ 14. Parameter Settings for User Entity Instance: cache_fsm_L2b:top_cache_fsm_L2b
+ 15. Parameter Settings for User Entity Instance: cache_fsm_L2c:top_cache_fsm_L2c
+ 16. Parameter Settings for User Entity Instance: cache_fsm_L2d:top_cache_fsm_L2d
+ 17. Parameter Settings for User Entity Instance: cache_fsm_L3:top_cache_fsm_L3
+ 18. Parameter Settings for User Entity Instance: arbiter:top_arbiter
+ 19. Port Connectivity Checks: "cache_fsm_L3:top_cache_fsm_L3"
+ 20. Port Connectivity Checks: "cache_fsm_L2d:top_cache_fsm_L2d"
+ 21. Port Connectivity Checks: "cache_fsm_L2c:top_cache_fsm_L2c"
+ 22. Port Connectivity Checks: "cache_fsm_L2b:top_cache_fsm_L2b"
+ 23. Port Connectivity Checks: "cache_fsm_L2a:top_cache_fsm_L2a"
+ 24. Port Connectivity Checks: "cache_fsm_L1d:top_cache_fsm_L1d"
+ 25. Port Connectivity Checks: "cache_fsm_L1c:top_cache_fsm_L1c"
+ 26. Port Connectivity Checks: "cache_fsm_L1b:top_cache_fsm_L1b"
+ 27. Port Connectivity Checks: "cache_fsm_L1a:top_cache_fsm_L1a"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Mar 21 12:17:30 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; topmodule                                   ;
+; Top-level Entity Name           ; topmodule                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 427                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA7F31C7        ;                    ;
+; Top-level entity name                                                           ; topmodule          ; topmodule          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++-------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++-------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; ../../project1a/topmodule.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv              ;         ;
+; ../../project1a/main_memory_controller.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/main_memory_controller.sv ;         ;
+; ../../project1a/main_memory_config.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/main_memory_config.sv     ;         ;
+; ../../project1a/cache_fsm_L3.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L3.sv           ;         ;
+; ../../project1a/cache_fsm_L2d.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2d.sv          ;         ;
+; ../../project1a/cache_fsm_L2c.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2c.sv          ;         ;
+; ../../project1a/cache_fsm_L2b.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2b.sv          ;         ;
+; ../../project1a/cache_fsm_L2a.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2a.sv          ;         ;
+; ../../project1a/cache_fsm_L1d.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1d.sv          ;         ;
+; ../../project1a/cache_fsm_L1c.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1c.sv          ;         ;
+; ../../project1a/cache_fsm_L1b.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1b.sv          ;         ;
+; ../../project1a/cache_fsm_L1a.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1a.sv          ;         ;
+; ../../project1a/cache_config.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_config.sv           ;         ;
+; ../../project1a/arbiter.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv                ;         ;
++-------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 427   ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 427   ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |topmodule                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 427  ; 0            ; |topmodule          ; topmodule   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L1a:top_cache_fsm_L1a ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L1b:top_cache_fsm_L1b ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L1c:top_cache_fsm_L1c ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L1d:top_cache_fsm_L1d ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L2a:top_cache_fsm_L2a ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L2b:top_cache_fsm_L2b ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L2c:top_cache_fsm_L2c ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L2d:top_cache_fsm_L2d ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; CACHE_LEVEL    ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache_fsm_L3:top_cache_fsm_L3 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; CACHE_LEVEL    ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arbiter:top_arbiter ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; CACHE_LEVEL    ; 2     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L3:top_cache_fsm_L3"                                                                                          ;
++------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                     ; Type   ; Severity ; Details                                                                             ;
++------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; L3_cache_hit                             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L3_cache_miss                            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L3_cache_ready                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L3_from_main_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L2d:top_cache_fsm_L2d"                                                                                         ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                      ; Type   ; Severity ; Details                                                                             ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; L2d_cache_hit                             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2d_cache_read_hit                        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2d_cache_write_hit                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2d_cache_miss                            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2d_cache_ready                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L2d_from_main_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L2c:top_cache_fsm_L2c"                                                                                         ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                      ; Type   ; Severity ; Details                                                                             ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; L2c_cache_hit                             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2c_cache_read_hit                        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2c_cache_write_hit                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2c_cache_miss                            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2c_cache_ready                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L2c_from_main_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L2b:top_cache_fsm_L2b"                                                                                         ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                      ; Type   ; Severity ; Details                                                                             ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; L2b_cache_hit                             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2b_cache_read_hit                        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2b_cache_write_hit                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2b_cache_miss                            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2b_cache_ready                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L2b_from_main_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L2a:top_cache_fsm_L2a"                                                                                         ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                      ; Type   ; Severity ; Details                                                                             ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; L2a_cache_hit                             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2a_cache_read_hit                        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2a_cache_write_hit                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2a_cache_miss                            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L2a_cache_ready                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L2a_from_main_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L1d:top_cache_fsm_L1d"                                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                          ; Type   ; Severity ; Details                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_L1d_read_data                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1d_cache_hit                                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1d_cache_miss                                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1d_cache_ready                               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L1d_written_by_testbench ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L1c:top_cache_fsm_L1c"                                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                          ; Type   ; Severity ; Details                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_L1c_read_data                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1c_cache_hit                                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1c_cache_miss                                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1c_cache_ready                               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L1c_written_by_testbench ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L1b:top_cache_fsm_L1b"                                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                          ; Type   ; Severity ; Details                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_L1b_read_data                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1b_cache_hit                                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1b_cache_miss                                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1b_cache_ready                               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L1b_written_by_testbench ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache_fsm_L1a:top_cache_fsm_L1a"                                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                          ; Type   ; Severity ; Details                                                                             ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_L1a_read_data                           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1a_cache_hit                                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1a_cache_miss                                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; L1a_cache_ready                               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L1a_written_by_testbench ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_stored_at_cache_L1a_from_main_memory     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 427                             ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Thu Mar 21 12:17:16 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c topmodule
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/topmodule.sv
+    Info (12023): Found entity 1: topmodule File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 10
+Warning (10229): Verilog HDL Expression warning at testbench.sv(814): truncated literal to match 128 bits File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 814
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/testbench.sv
+    Info (12023): Found entity 1: testbench File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/main_memory_controller.sv
+    Info (12023): Found entity 1: main_memory_controller File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/main_memory_controller.sv Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/main_memory_config.sv
+    Info (12022): Found design unit 1: main_memory_config (SystemVerilog) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/main_memory_config.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l3.sv
+    Info (12023): Found entity 1: cache_fsm_L3 File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L3.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l2d.sv
+    Info (12023): Found entity 1: cache_fsm_L2d File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2d.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l2c.sv
+    Info (12023): Found entity 1: cache_fsm_L2c File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2c.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l2b.sv
+    Info (12023): Found entity 1: cache_fsm_L2b File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2b.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l2a.sv
+    Info (12023): Found entity 1: cache_fsm_L2a File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2a.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l1d.sv
+    Info (12023): Found entity 1: cache_fsm_L1d File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1d.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l1c.sv
+    Info (12023): Found entity 1: cache_fsm_L1c File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1c.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l1b.sv
+    Info (12023): Found entity 1: cache_fsm_L1b File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1b.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_fsm_l1a.sv
+    Info (12023): Found entity 1: cache_fsm_L1a File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1a.sv Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/cache_config.sv
+    Info (12022): Found design unit 1: cache_config (SystemVerilog) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_config.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/mdest/onedrive/documents/advanced_computer_hardware/project1a/arbiter.sv
+    Info (12023): Found entity 1: arbiter File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 10
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(221): created implicit net for "mesi_state_confirmation_a" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 221
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(236): created implicit net for "L2a_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 236
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(244): created implicit net for "mesi_state_confirmation_verified_flag_a" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 244
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(264): created implicit net for "mesi_state_confirmation_b" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 264
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(279): created implicit net for "L2b_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 279
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(284): created implicit net for "cache_fsm_L2b_block_to_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 284
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(287): created implicit net for "mesi_state_confirmation_verified_flag_b" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 287
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(305): created implicit net for "arbiter_verify_c" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 305
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(307): created implicit net for "mesi_state_confirmation_c" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 307
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(322): created implicit net for "L2c_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 322
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(330): created implicit net for "mesi_state_confirmation_verified_flag_c" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 330
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(350): created implicit net for "mesi_state_confirmation_d" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 350
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(364): created implicit net for "L2d_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 364
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(372): created implicit net for "mesi_state_confirmation_verified_flag_d" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 372
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(401): created implicit net for "cache_L3b_memory_address_to_array_L3b_from_arbiter_flag" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 401
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(402): created implicit net for "cache_L3c_memory_address_to_array_L3c_from_arbiter_flag" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 402
+Warning (10236): Verilog HDL Implicit Net warning at topmodule.sv(403): created implicit net for "cache_L3d_memory_address_to_array_L3d_from_arbiter_flag" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 403
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(223): created implicit net for "L2a_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 223
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(266): created implicit net for "L2b_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 266
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(309): created implicit net for "L2c_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 309
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(351): created implicit net for "L2d_cache_hit" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 351
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(379): created implicit net for "write_back_to_L3_request_from_L2a_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 379
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(380): created implicit net for "write_back_to_L3_request_from_L2b_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 380
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(381): created implicit net for "write_back_to_L3_request_from_L2c_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 381
+Warning (10236): Verilog HDL Implicit Net warning at testbench.sv(382): created implicit net for "write_back_to_L3_request_from_L2d_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/testbench.sv Line: 382
+Info (12127): Elaborating entity "topmodule" for the top level hierarchy
+Info (12128): Elaborating entity "cache_fsm_L1a" for hierarchy "cache_fsm_L1a:top_cache_fsm_L1a" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 126
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L1a.sv(111): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1a.sv Line: 111
+Info (12128): Elaborating entity "cache_fsm_L1b" for hierarchy "cache_fsm_L1b:top_cache_fsm_L1b" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 151
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L1b.sv(110): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1b.sv Line: 110
+Info (12128): Elaborating entity "cache_fsm_L1c" for hierarchy "cache_fsm_L1c:top_cache_fsm_L1c" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 176
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L1c.sv(110): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1c.sv Line: 110
+Info (12128): Elaborating entity "cache_fsm_L1d" for hierarchy "cache_fsm_L1d:top_cache_fsm_L1d" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 201
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L1d.sv(110): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L1d.sv Line: 110
+Info (12128): Elaborating entity "cache_fsm_L2a" for hierarchy "cache_fsm_L2a:top_cache_fsm_L2a" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 246
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2a.sv(184): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2a.sv Line: 184
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2a.sv(195): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2a.sv Line: 195
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2a.sv(202): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2a.sv Line: 202
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "array_of_cache_L2a_memory_addresses" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_LRU" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_tags" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_data" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_MESI_states" into its bus
+Info (12128): Elaborating entity "cache_fsm_L2b" for hierarchy "cache_fsm_L2b:top_cache_fsm_L2b" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 289
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2b.sv(184): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2b.sv Line: 184
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2b.sv(195): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2b.sv Line: 195
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2b.sv(202): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2b.sv Line: 202
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "array_of_cache_L2b_memory_addresses" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_LRU" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_tags" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_data" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_MESI_states" into its bus
+Info (12128): Elaborating entity "cache_fsm_L2c" for hierarchy "cache_fsm_L2c:top_cache_fsm_L2c" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 332
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2c.sv(184): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2c.sv Line: 184
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2c.sv(195): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2c.sv Line: 195
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2c.sv(202): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2c.sv Line: 202
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "array_of_cache_L2c_memory_addresses" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_LRU" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_tags" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_data" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_MESI_states" into its bus
+Info (12128): Elaborating entity "cache_fsm_L2d" for hierarchy "cache_fsm_L2d:top_cache_fsm_L2d" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 374
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2d.sv(182): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2d.sv Line: 182
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2d.sv(193): truncated value with size 32 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2d.sv Line: 193
+Warning (10230): Verilog HDL assignment warning at cache_fsm_L2d.sv(200): truncated value with size 32 to match size of target (2) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L2d.sv Line: 200
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "array_of_cache_L2d_memory_addresses" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_LRU" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_tags" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_data" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "L2_MESI_states" into its bus
+Info (12128): Elaborating entity "cache_fsm_L3" for hierarchy "cache_fsm_L3:top_cache_fsm_L3" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 424
+Warning (10036): Verilog HDL or VHDL warning at cache_fsm_L3.sv(81): object "tag_value" assigned a value but never read File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/cache_fsm_L3.sv Line: 81
+Info (12128): Elaborating entity "main_memory_controller" for hierarchy "main_memory_controller:top_memory_controller" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 436
+Info (12128): Elaborating entity "arbiter" for hierarchy "arbiter:top_arbiter" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 533
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(166): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 166
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(167): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 167
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(168): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 168
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(169): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 169
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(170): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 170
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(171): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 171
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(174): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 174
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(176): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 176
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(178): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 178
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(186): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 186
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(188): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 188
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(190): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 190
+Warning (10027): Verilog HDL or VHDL warning at the arbiter.sv(206): index expression is not wide enough to address all of the elements in the array File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 206
+Warning (10230): Verilog HDL assignment warning at arbiter.sv(263): truncated value with size 2 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 263
+Warning (10230): Verilog HDL assignment warning at arbiter.sv(269): truncated value with size 2 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 269
+Warning (10230): Verilog HDL assignment warning at arbiter.sv(275): truncated value with size 2 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 275
+Warning (10230): Verilog HDL assignment warning at arbiter.sv(281): truncated value with size 2 to match size of target (1) File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/arbiter.sv Line: 281
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "local_L2a_data_storage" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "local_L2b_data_storage" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "local_L2c_data_storage" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "local_L2d_data_storage" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "arbiter_MESI_states" into its bus
+Info (144001): Generated suppressed messages file C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/Advanced-Computer-Hardware/Project 1/output_files/topmodule.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 427 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 11
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 12
+    Warning (15610): No output dependent on input pin "cache_a_read_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 14
+    Warning (15610): No output dependent on input pin "cache_a_write_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 15
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_L1a_memory_address[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 16
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_1a_write_data[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 17
+    Warning (15610): No output dependent on input pin "cache_b_read_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 18
+    Warning (15610): No output dependent on input pin "cache_b_write_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 19
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_L1b_memory_address[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 20
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_1b_write_data[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 21
+    Warning (15610): No output dependent on input pin "cache_c_read_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 22
+    Warning (15610): No output dependent on input pin "cache_c_write_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 23
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_L1c_memory_address[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 24
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_1c_write_data[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 25
+    Warning (15610): No output dependent on input pin "cache_d_read_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 26
+    Warning (15610): No output dependent on input pin "cache_d_write_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 27
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_L1d_memory_address[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 28
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "cache_1d_write_data[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 29
+    Warning (15610): No output dependent on input pin "main_memory_write_request" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 31
+    Warning (15610): No output dependent on input pin "main_memory_address[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_address[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 32
+    Warning (15610): No output dependent on input pin "main_memory_write_data[0]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[1]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[2]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[3]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[4]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[5]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[6]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[7]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[8]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[9]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[10]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[11]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[12]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[13]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[14]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[15]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[16]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[17]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[18]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[19]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[20]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[21]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[22]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[23]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[24]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[25]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[26]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[27]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[28]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[29]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[30]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[31]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[32]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[33]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[34]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[35]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[36]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[37]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[38]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[39]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[40]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[41]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[42]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[43]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[44]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[45]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[46]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[47]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[48]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[49]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[50]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[51]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[52]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[53]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[54]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[55]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[56]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[57]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[58]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[59]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[60]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[61]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[62]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[63]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[64]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[65]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[66]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[67]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[68]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[69]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[70]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[71]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[72]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[73]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[74]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[75]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[76]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[77]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[78]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[79]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[80]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[81]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[82]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[83]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[84]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[85]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[86]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[87]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[88]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[89]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[90]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[91]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[92]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[93]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[94]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[95]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[96]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[97]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[98]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[99]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[100]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[101]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[102]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[103]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[104]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[105]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[106]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[107]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[108]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[109]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[110]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[111]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[112]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[113]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[114]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[115]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[116]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[117]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[118]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[119]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[120]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[121]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[122]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[123]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[124]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[125]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[126]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+    Warning (15610): No output dependent on input pin "main_memory_write_data[127]" File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project1a/topmodule.sv Line: 34
+Info (21057): Implemented 427 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 427 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 489 warnings
+    Info: Peak virtual memory: 4921 megabytes
+    Info: Processing ended: Thu Mar 21 12:17:30 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/Advanced-Computer-Hardware/Project 1/output_files/topmodule.map.smsg.
+
+
