@@ -4,11 +4,17 @@
 
 //Top Module
 
-module top_module ();
+module topmodule (
+    input logic clk,
+    input logic reset,
+
+    output logic data_hazard,
+    output logic queue_advance //advances queue for testing purposes
+);
 
     // Outputs from the instruction queue module
     logic queue_empty;
-    logic queue_advance;
+    // logic queue_advance;
     logic [31:0] instruction_out1, instruction_out2; // Instructions outputted per cycle
     logic valid_out1, valid_out2; // Validity flags for the instructions
 
@@ -84,7 +90,7 @@ module top_module ();
     logic no_operation_instruction1;
     logic no_operation_instruction2;
     logic notify_tb_of_data_hazard;
-    logic data_hazard;
+    // logic data_hazard;
 
     // Adder signals 
     logic start;

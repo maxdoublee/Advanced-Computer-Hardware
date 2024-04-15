@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at register_file.sv(25): always construct contains both blocking and non-blocking assignments File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/register_file.sv Line: 25
+Warning (10268): Verilog HDL information at multiplier_unit.sv(32): always construct contains both blocking and non-blocking assignments File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/multiplier_unit.sv Line: 32
+Warning (10268): Verilog HDL information at dispatch_unit.sv(75): always construct contains both blocking and non-blocking assignments File: C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/dispatch_unit.sv Line: 75

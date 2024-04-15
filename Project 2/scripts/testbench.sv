@@ -705,19 +705,8 @@ module testbench(
 
     initial begin
         $monitor(
-            "
-            Time=%0t clk=%b reset=%b simulation_end=%b
-            Dispatch1: Opcode=%b RD1=%b RS1=%b RS2=%b Add=%b Mul=%b Load=%b Store=%b NOP=%b 
-            Dispatch2: Opcode=%b RD2=%b RS1=%b RS2=%b Add=%b Mul=%b Load=%b Store=%b NOP=%b
-            Data Hazard=%b Notify Testbench of Data Hazard=%b
-            start_memory_write1=%b, start_memory_read2=%b
-            Queue Advance=%b funct3_1=%0b",
-            $time, clk, reset, queue_empty,
-            opcode1, rd1, rs1_1, rs2_1, type_add1, type_mul1, type_load1, type_store1, type_nop1, 
-            opcode2, rd2, rs1_2, rs2_2, type_add2, type_mul2, type_load2, type_store2, type_nop2,
-            data_hazard,  notify_tb_of_data_hazard, 
-            start_memory_write1, start_memory_read2,
-            queue_advance, funct3_1
+            "Time=%0t clk=%b reset=%b simulation_end=%b Dispatch1: Opcode=%b RD1=%b RS1=%b RS2=%b Add=%b Mul=%b Load=%b Store=%b NOP=%b Dispatch2: Opcode=%b RD2=%b RS1=%b RS2=%b Add=%b Mul=%b Load=%b Store=%b NOP=%b Data Hazard=%b Notify Testbench of Data Hazard=%b Queue Advance=%b funct3_1=%0b",
+            $time, clk, reset, queue_empty, opcode1, rd1, rs1_1, rs2_1, type_add1, type_mul1, type_load1, type_store1, type_nop1, opcode2, rd2, rs1_2, rs2_2, type_add2, type_mul2, type_load2, type_store2, type_nop2, data_hazard,  notify_tb_of_data_hazard, queue_advance, funct3_1
         );
     end
 endmodule

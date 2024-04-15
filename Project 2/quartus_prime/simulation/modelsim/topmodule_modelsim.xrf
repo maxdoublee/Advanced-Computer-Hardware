@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/topmodule.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/testbench.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/register_file.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/multiplier_unit.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/memory_unit.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_queue.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/instruction_decoder.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/dispatch_unit.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/scripts/adder_unit.sv
+source_file = 1, C:/Users/mdest/OneDrive/Documents/Advanced_Computer_Hardware/project2/quartus_prime/db/topmodule.cbx.xml
+design_name = topmodule
+instance = comp, \data_hazard~output , data_hazard~output, topmodule, 1
+instance = comp, \queue_advance~output , queue_advance~output, topmodule, 1
+instance = comp, \clk~input , clk~input, topmodule, 1
+instance = comp, \reset~input , reset~input, topmodule, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, topmodule, 1

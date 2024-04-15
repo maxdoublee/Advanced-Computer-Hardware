@@ -39394,3 +39394,3486 @@ run 100
 #             start_memory_write1=1, start_memory_read2=0
 # 
 #             Queue Advance=0 funct3_1=0
+# Compile of adder_unit.sv was successful.
+# Compile of dispatch_unit.sv was successful.
+# Compile of instruction_decoder.sv was successful.
+# Compile of instruction_queue.sv was successful.
+# Compile of memory_unit.sv was successful.
+# Compile of multiplier_unit.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of testbench.sv was successful with warnings.
+# Compile of topmodule.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench
+# Loading work.instruction_queue
+# Loading work.instruction_decoder
+# Loading work.register_file
+# Loading work.memory_unit
+# Loading work.dispatch_unit
+# Loading work.adder_unit
+# Loading work.multiplier_unit
+run 600
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# 
+# 
+#             Time=0 clk=0 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=5 clk=1 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=10 clk=0 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=15 clk=1 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=20 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=25 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=30 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=35 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=40 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=45 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=50 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=55 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=60 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=65 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=70 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=75 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=80 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=85 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=90 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=95 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=100 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=105 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=110 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=115 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=120 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=125 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=130 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=135 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=140 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=145 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=150 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=155 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=160 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=165 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=170 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=175 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=180 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=185 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=190 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=195 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Dual instruction dispatch verified at time:                  200ns
+# 
+# 
+#             Time=200 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=205 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# Adder operation started at time:                  210
+# 
+# 
+#             Time=210 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=215 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=220 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=225 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=230 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=235 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=240 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=245 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Adder operation completed successfully within 4 cycles at time:                  250
+# 
+# 
+#             Time=250 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=255 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=260 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=265 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=270 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=275 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=280 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=285 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=290 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=295 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=300 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiplier operation started at time:                  305
+# 
+# 
+#             Time=305 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=310 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=315 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=320 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=325 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=330 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=335 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=340 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=345 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=350 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=355 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=360 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiplier operation completed successfully within 6 cycles at time:                  365
+# 
+# 
+#             Time=365 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=370 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=375 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=380 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Add operation result is correct. Expected 00000005, got 00000005
+# 
+# 
+#             Time=385 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=390 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiply operation result is correct. Expected 0000000f, got 0000000f
+# 
+# 
+#             Time=395 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=400 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=405 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=410 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=415 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=420 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=425 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=430 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=435 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=440 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=445 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=450 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Load operation completed successfully. Expected feedbeef, got feedbeef
+# 
+# 
+#             Time=455 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=460 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=465 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=470 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=475 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=480 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=485 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=490 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Store operation passed with correct memory address. Expected 0000000a, got 0000000a
+# 
+# 
+#             Time=495 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=500 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=505 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=510 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Store operation passed with correct write data. Expected feedbeef, got feedbeef
+# 
+# 
+#             Time=515 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=520 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# No operation instruction completed
+# 
+# 
+#             Time=525 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=530 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=0, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=535 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=540 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=545 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=550 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=555 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  560
+# 
+# 
+#             Time=560 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# WAR Test completed successfully.
+# 
+# 
+#             Time=565 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=570 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=575 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=580 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=585 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=590 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=595 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+run 100
+# 
+# 
+#             Time=600 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=605 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  610
+# 
+# 
+#             Time=610 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# RAW Test completed successfully.
+# 
+# 
+#             Time=615 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=620 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=625 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=630 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=635 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=640 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=645 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=650 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=655 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  660
+# 
+# 
+#             Time=660 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# WAW Test completed successfully.
+# 
+# 
+#             Time=665 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=670 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             start_memory_write1=1, start_memory_read2=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=675 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=680 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# Data Hazards Test completed successfully.
+# 
+# 
+#             Time=685 clk=1 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=690 clk=0 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=695 clk=1 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             start_memory_write1=1, start_memory_read2=0
+# 
+#             Queue Advance=0 funct3_1=0
+# Compile of adder_unit.sv was successful.
+# Compile of dispatch_unit.sv was successful.
+# Compile of instruction_decoder.sv was successful.
+# Compile of instruction_queue.sv was successful.
+# Compile of memory_unit.sv was successful.
+# Compile of multiplier_unit.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of testbench.sv was successful with warnings.
+# Compile of topmodule.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench
+# Loading work.instruction_queue
+# Loading work.instruction_decoder
+# Loading work.register_file
+# Loading work.memory_unit
+# Loading work.dispatch_unit
+# Loading work.adder_unit
+# Loading work.multiplier_unit
+run 700
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# 
+# 
+#             Time=0 clk=0 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=5 clk=1 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=10 clk=0 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=15 clk=1 reset=1 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=20 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=25 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=30 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000000 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000000 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=35 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=40 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=45 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=50 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=55 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=60 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=65 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=70 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=75 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=80 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=85 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=90 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=95 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=100 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=105 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=110 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=115 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=120 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=125 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=130 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=135 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=140 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=145 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=150 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=155 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=160 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=165 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=170 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=175 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=180 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=185 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=190 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=195 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Dual instruction dispatch verified at time:                  200ns
+# 
+# 
+#             Time=200 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=205 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# Adder operation started at time:                  210
+# 
+# 
+#             Time=210 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=215 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=220 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=225 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=230 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=235 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=240 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=245 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Adder operation completed successfully within 4 cycles at time:                  250
+# 
+# 
+#             Time=250 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=255 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=260 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=265 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=270 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=275 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=280 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=285 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=290 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=295 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=300 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiplier operation started at time:                  305
+# 
+# 
+#             Time=305 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=310 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=315 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=320 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=325 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=330 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=335 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=340 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=345 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=350 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=355 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=360 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiplier operation completed successfully within 6 cycles at time:                  365
+# 
+# 
+#             Time=365 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=370 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=375 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=380 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=0 Mul=1 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Add operation result is correct. Expected 00000005, got 00000005
+# 
+# 
+#             Time=385 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=390 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# Multiply operation result is correct. Expected 0000000f, got 0000000f
+# 
+# 
+#             Time=395 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=400 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0110011 RD1=00011 RS1=00001 RS2=00010 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0110011 RD2=00100 RS1=00010 RS2=00100 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=0
+# 
+# 
+#             Time=405 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=410 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=1 Mul=0 Load=0 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=1 Load=0 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=415 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=420 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=425 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=430 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=435 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=440 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=445 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=450 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Load operation completed successfully. Expected feedbeef, got feedbeef
+# 
+# 
+#             Time=455 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=460 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=465 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=470 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=475 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=480 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=485 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=490 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Store operation passed with correct memory address. Expected 0000000a, got 0000000a
+# 
+# 
+#             Time=495 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=500 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=505 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=510 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Store operation passed with correct write data. Expected feedbeef, got feedbeef
+# 
+# 
+#             Time=515 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=520 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# No operation instruction completed
+# 
+# 
+#             Time=525 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=530 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=535 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=540 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=545 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=550 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=555 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  560
+# 
+# 
+#             Time=560 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# WAR Test completed successfully.
+# 
+# 
+#             Time=565 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=570 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=575 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=580 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0000011 RD1=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=585 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=590 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=595 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=600 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=605 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  610
+# 
+# 
+#             Time=610 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# RAW Test completed successfully.
+# 
+# 
+#             Time=615 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=620 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=625 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=630 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0000011 RD2=01010 RS1=00101 RS2=00100 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=635 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=640 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=1 Store=0 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=645 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=650 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# 
+#             Time=655 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# Dual instruction dispatch verified at                  660
+# 
+# 
+#             Time=660 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=1 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=10
+# 
+# WAW Test completed successfully.
+# 
+# 
+#             Time=665 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=670 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=1
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=675 clk=1 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# 
+#             Time=680 clk=0 reset=0 simulation_end=0
+# 
+#             Dispatch1: Opcode=0100011 RD1=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0100011 RD2=00000 RS1=00101 RS2=01010 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=1 funct3_1=10
+# 
+# Data Hazards Test completed successfully.
+# 
+# 
+#             Time=685 clk=1 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=690 clk=0 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=1 NOP=0
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# 
+# 
+#             Time=695 clk=1 reset=0 simulation_end=1
+# 
+#             Dispatch1: Opcode=0010011 RD1=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1 
+# 
+#             Dispatch2: Opcode=0010011 RD2=00000 RS1=00000 RS2=00000 Add=0 Mul=0 Load=0 Store=0 NOP=1
+# 
+#             Data Hazard=0 Notify Testbench of Data Hazard=0
+# 
+#             Queue Advance=0 funct3_1=0
+# End time: 06:30:09 on Apr 15,2024, Elapsed time: 15:52:38
+# Errors: 0, Warnings: 1

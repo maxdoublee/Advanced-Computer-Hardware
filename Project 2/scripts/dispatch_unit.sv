@@ -117,15 +117,6 @@ module dispatch_unit (
             notify_tb_of_data_hazard <= 0;
         end else begin
             // Dispatch logic for first instruction
-            $display("type_add1:%b", type_add1);
-            $display("first_entry_type_add1:%b", first_entry_type_add1);
-            $display("type_mul1:%b", type_mul1);
-            $display("first_entry_type_mul1:%b", first_entry_type_mul1);
-            $display("type_load1:%b", type_load1);
-            $display("first_entry_type_load1:%b", first_entry_type_load1);
-            $display("type_store1:%b", type_store1);
-            $display("first_entry_type_store1:%b", first_entry_type_store1);
-            $display("start_memory_write1:%b", start_memory_write1);
             if (type_add1 && !first_entry_type_add1) begin
                 // Request operands through source registers
                 request_rs_flag1 <= 1;
